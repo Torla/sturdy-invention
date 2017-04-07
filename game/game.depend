@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1491257897 source:/home/torla/programmi/game/main.cpp
+	<iostream>
+	<string>
+	"position.h"
+
+1491211983 source:/home/torla/programmi/game/position.cpp
+	"position.h"
+	<math.h>
+
+1491258031 /home/torla/programmi/game/position.h
+	<iostream>
+	<string>
+	<sstream>
+	"index.h"
+	"index_imp.h"
+
+1491222922 source:/home/torla/programmi/game/index.cpp
+	"index.h"
+	"iostream"
+
+1491258017 /home/torla/programmi/game/index.h
+	<iostream>
+
+1491257682 /home/torla/programmi/game/index.cpp
+	"index.h"
+	"iostream"
+
+1491257988 /home/torla/programmi/game/index_imp.h
+	"index.h"
+	"iostream"
+
