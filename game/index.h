@@ -3,23 +3,29 @@
 
 #include <iostream>
 
-class indexable{
+class indexable {
 public:
-     virtual operator int() const=0;
+    virtual operator int() const=0;
 };
 
 
-template <class T> class index{
+template <class T> class index {
     int indexDim;
     T **table;
     int numElements;
 
-    int hash(const int x){return x%indexDim;}
+    int hash(const int x) {
+        return x%indexDim;
+    }
 public:
     index(int size);
     bool add(T & x);
     bool remove(T & x);
     T* find(int id);
+    ~index();
+    bool clear();
+    bool freeAll();
+    void forEach(void (T::*consumer)());
 };
 
 

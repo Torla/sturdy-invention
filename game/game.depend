@@ -30,3 +30,26 @@
 	"index.h"
 	"iostream"
 
+1492098499 source:/home/torla/Scrivania/game/sturdy-invention/game/position.cpp
+	"position.h"
+	<math.h>
+
+1492101277 /home/torla/Scrivania/game/sturdy-invention/game/position.h
+	<iostream>
+	<string>
+	<sstream>
+	"index.h"
+	"index_imp.h"
+
+1492102448 /home/torla/Scrivania/game/sturdy-invention/game/index.h
+	<iostream>
+
+1492102360 /home/torla/Scrivania/game/sturdy-invention/game/index_imp.h
+	"index.h"
+	"iostream"
+
+1492101567 source:/home/torla/Scrivania/game/sturdy-invention/game/main.cpp
+	<iostream>
+	<string>
+	"position.h"
+
