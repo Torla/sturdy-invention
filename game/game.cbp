@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Linker>
+			<Add option="-lSDL2 -lSDL2_image" />
+		</Linker>
 		<Unit filename="index.h" />
 		<Unit filename="index_imp.h" />
 		<Unit filename="main.cpp" />

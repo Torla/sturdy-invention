@@ -2,6 +2,8 @@
 #include <string>
 #include "position.h"
 
+
+
 using namespace std;
 
 int main() {
