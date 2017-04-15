@@ -48,12 +48,12 @@
 	"index.h"
 	"iostream"
 
-1492257329 source:/home/torla/Scrivania/game/sturdy-invention/game/main.cpp
+1492263370 source:/home/torla/Scrivania/game/sturdy-invention/game/main.cpp
 	<iostream>
 	<string>
-	"grafic.h"
+	"screen.h"
 
-1492257300 source:/home/torla/Scrivania/game/sturdy-invention/game/grafic.cpp
+1492260836 source:/home/torla/Scrivania/game/sturdy-invention/game/grafic.cpp
 	"grafic.h"
 	"iostream"
 
@@ -61,4 +61,11 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<string>
+
+1492260469 source:/home/torla/Scrivania/game/sturdy-invention/game/screen.cpp
+	"screen.h"
+
+1492263543 /home/torla/Scrivania/game/sturdy-invention/game/screen.h
+	<array>
+	"grafic.h"
 
