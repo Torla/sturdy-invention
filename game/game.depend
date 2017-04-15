@@ -34,24 +34,26 @@
 	"position.h"
 	<math.h>
 
-1492276130 /home/torla/Scrivania/game/sturdy-invention/game/position.h
+1492283944 /home/torla/Scrivania/game/sturdy-invention/game/position.h
 	<iostream>
 	<string>
 	<sstream>
 	"index.h"
 	"index_imp.h"
 
-1492276096 /home/torla/Scrivania/game/sturdy-invention/game/index.h
+1492276933 /home/torla/Scrivania/game/sturdy-invention/game/index.h
 	<iostream>
 
 1492276137 /home/torla/Scrivania/game/sturdy-invention/game/index_imp.h
 	"index.h"
 	"iostream"
 
-1492276188 source:/home/torla/Scrivania/game/sturdy-invention/game/main.cpp
+1492284375 source:/home/torla/Scrivania/game/sturdy-invention/game/main.cpp
 	<iostream>
+	<string>
 	"position.h"
 	"screen.h"
+	"obj.h"
 
 1492273340 source:/home/torla/Scrivania/game/sturdy-invention/game/grafic.cpp
 	"grafic.h"
@@ -68,4 +70,16 @@
 1492274603 /home/torla/Scrivania/game/sturdy-invention/game/screen.h
 	<array>
 	"grafic.h"
+
+1492284315 source:/home/torla/Scrivania/game/sturdy-invention/game/obj.cpp
+	"obj.h"
+	"index.h"
+	"index_imp.h"
+
+1492284563 /home/torla/Scrivania/game/sturdy-invention/game/obj.h
+	<string>
+	<sstream>
+	"index.h"
+	"screen.h"
+	"position.h"
 

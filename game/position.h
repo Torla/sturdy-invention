@@ -27,7 +27,7 @@ public:
     float distance(int x,int y);
     int distance_man(const position & p);//da fixare
     int distance_man(int x,int y);
-    operator std::string() const {
+    virtual operator std::string() const {
         std::stringstream s;
         s << '(' << x << ',' << y << ')';
         return s.str();

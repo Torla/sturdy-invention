@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class indexofable {
+class indexable {
 public:
     virtual operator int() const=0;
 };
