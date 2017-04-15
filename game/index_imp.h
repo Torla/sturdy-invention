@@ -49,43 +49,43 @@ template <class T> T* index<T>::find(int id) {
     return table[i];
 }
 
-template <class T> index<T>::~index(){
-    if(numElements!=0){
+template <class T> index<T>::~index() {
+    if(numElements!=0) {
         std::cout << "war: eliminating not empty index" << std::endl;
     }
     delete table;
     return;
 }
 
-template <class T> bool index<T>::clear(){
-int i;
-for(i=0;i<indexDim && numElements!=0;i++){
-    if (table[i]!=NULL) {
+template <class T> bool index<T>::clear() {
+    int i;
+    for(i=0; i<indexDim && numElements!=0; i++) {
+        if (table[i]!=NULL) {
             delete table[i]=NULL;
             numElements--;
+        }
     }
-}
-return false;
+    return false;
 }
 
-template <class T> bool index<T>::freeAll(){
-int i;
-for(i=0;i<indexDim && numElements!=0;i++){
-    if (table[i]!=NULL) {
+template <class T> bool index<T>::freeAll() {
+    int i;
+    for(i=0; i<indexDim && numElements!=0; i++) {
+        if (table[i]!=NULL) {
             delete table[i];
             numElements--;
+        }
     }
-}
-return false;
+    return false;
 }
 
-template <class T> void index<T>::forEach(void (T::*consumer)()){
-int i;
-for(i=0;i<indexDim && numElements;i++){
-    if (table[i]!=NULL) {
+template <class T> void index<T>::forEach(void (T::*consumer)()) {
+    int i;
+    for(i=0; i<indexDim && numElements; i++) {
+        if (table[i]!=NULL) {
             (table[i]->*consumer)();
+        }
     }
-}
-return;
+    return;
 }
 #endif // INDEX_H_INCLUDED

@@ -35,6 +35,8 @@
 		<Linker>
 			<Add option="-lSDL2 -lSDL2_image" />
 		</Linker>
+		<Unit filename="grafic.cpp" />
+		<Unit filename="grafic.h" />
 		<Unit filename="index.h" />
 		<Unit filename="index_imp.h" />
 		<Unit filename="main.cpp" />

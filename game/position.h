@@ -10,7 +10,7 @@
 #include "index.h"
 #include "index_imp.h"
 
-class position:public indexable {
+class position {
     int x;
     int y;
 public:
@@ -35,7 +35,6 @@ public:
         s << '(' << x << ',' << y << ')';
         return s.str();
     }
-    void test(){std::cout << get_position_x() << std::endl;} // only to test
 };
 
 
