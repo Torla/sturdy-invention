@@ -14,9 +14,6 @@ class position {
     int x;
     int y;
 public:
-    operator int() const {
-        return x+y;
-    }
     position(int x,int y);
     position();
     void move(int x,int y);
@@ -37,5 +34,13 @@ public:
     }
 };
 
-
+enum direction{N=0,
+NW=45,
+W=90,
+SW=135,
+S=180,
+SE=225,
+E=270,
+NE=315,
+};
 #endif // POSITION_H_INCLUDED

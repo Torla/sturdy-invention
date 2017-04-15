@@ -37,3 +37,4 @@ int position::distance_man(int x,int y) {
 int position::distance_man(const position & p) {
     return this->distance_man(p.x,p.y);
 }
+

@@ -31,39 +31,42 @@ window::~window() {
     SDL_DestroyWindow(win);
 }
 
-void window::put(texture *tex,int x,int y,int w,int h){
-SDL_Rect sc;
-sc.x=x;
-sc.y=y;
-sc.w=w;
-sc.h=h;
-SDL_RenderCopy(renderer,tex->getTexture(),NULL,&sc);
+void window::put(texture *tex,int x,int y,int w,int h,int angle) {
+    SDL_Rect sc;
+    sc.x=x;
+    sc.y=y;
+    sc.w=w;
+    sc.h=h;
+    SDL_RenderCopyEx(renderer,tex->getTexture(),NULL,&sc,angle,NULL,SDL_FLIP_NONE);
 }
 
 
 
-texture::texture(const char* path,window *win){
-SDL_Surface *surf;
-if(!isinit){
-    if(IMG_Init(IMG_INIT_JPG|IMG_INIT_PNG)<0){
-        std::cout << "IMG init error" << IMG_GetError() << std::endl;
+texture::texture(const char* path,window *win,bool colorKey,int r,int g,int b) {
+    SDL_Surface *surf;
+    if(!isinit) {
+        if(IMG_Init(IMG_INIT_JPG|IMG_INIT_PNG)<0) {
+            std::cout << "IMG init error" << IMG_GetError() << std::endl;
+            return;
+        }
+    }
+    surf=IMG_Load(path);
+    if(surf==NULL) {
+        std::cout << " Error loading:" << path << IMG_GetError()  << std::endl;
         return;
     }
-}
-surf=IMG_Load(path);
-if(surf==NULL){
-    std::cout << " Error loading:" << path << IMG_GetError()  << std::endl;
+    if(colorKey) {
+        SDL_SetColorKey(surf,SDL_TRUE, SDL_MapRGB(surf->format,r,g,b));
+    }
+    tex=SDL_CreateTextureFromSurface(win->getRenderer(),surf);
+    SDL_FreeSurface(surf);
+    if(tex==NULL) {
+        std::cout << " Error crating surface" << IMG_GetError() << std::endl;
+        return;
+    }
     return;
-}
-tex=SDL_CreateTextureFromSurface(win->getRenderer(),surf);
-SDL_FreeSurface(surf);
-if(tex==NULL){
-    std::cout << " Error crating surface" << IMG_GetError() << std::endl;
-    return;
-}
-return;
 }
 
-texture::~texture(){
-SDL_DestroyTexture(tex);
+texture::~texture() {
+    SDL_DestroyTexture(tex);
 }

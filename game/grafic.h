@@ -28,20 +28,30 @@ public:
         SDL_GetWindowSize(win,NULL,&h);
         return h;
     }
-    void setSize(int w,int h){SDL_SetWindowSize(win,w,h);}
-    SDL_Renderer *getRenderer(){return renderer;}
-    void clear(){SDL_RenderClear(renderer);}
-    void show(){SDL_RenderPresent(renderer);}
-    void put(texture* tex,int x,int y,int w,int h);
+    void setSize(int w,int h) {
+        SDL_SetWindowSize(win,w,h);
+    }
+    SDL_Renderer *getRenderer() {
+        return renderer;
+    }
+    void clear() {
+        SDL_RenderClear(renderer);
+    }
+    void show() {
+        SDL_RenderPresent(renderer);
+    }
+    void put(texture* tex,int x,int y,int w,int h,int angle=0);
 };
 
-class texture{
+class texture {
     static bool isinit;
     SDL_Texture* tex;
 public:
-    texture(const char *path,window *win);
+    texture(const char *path,window *win,bool colorKey=false,int r=0x0,int g=0x0,int b=0x0);
     ~texture();
-    SDL_Texture* getTexture(){return tex;}
+    SDL_Texture* getTexture() {
+        return tex;
+    }
 };
 
 #endif // GRAFIC_H_INCLUDED

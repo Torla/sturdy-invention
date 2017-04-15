@@ -2,7 +2,8 @@
 
 screen_class screen;
 
-std::array<texture*,TILENUM> tileset ={
-NULL,
-new texture("img/test.jpg",screen.getWindow())
+std::array<texture*,TILENUM> tileset = {
+    NULL,
+    new texture("img/test.bmp",screen.getWindow()),
+    new texture("img/test2.bmp",screen.getWindow(),true),
 };

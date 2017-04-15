@@ -1,5 +1,5 @@
-#ifndef INDEX_IMP_H_INCLUDED
-#define INDEX_IMP_H_INCLUDED
+#ifndef indexof_IMP_H_INCLUDED
+#define indexof_IMP_H_INCLUDED
 
 #include "index.h"
 
@@ -7,31 +7,31 @@
 
 
 
-template <class T> index<T>::index(int size) {
+template <class T> indexof<T>::indexof(int size) {
     table=new T*[size];
     for(int i=0; i<size; i++) {
         table[i]=NULL;
     }
-    indexDim=size;
+    indexofDim=size;
     numElements=0;
 }
-template <class T> bool index<T>::add(T & x) {
+template <class T> bool indexof<T>::add(T & x) {
     int i;
-    if(indexDim==numElements) {
-        std::cout << "err: Index is full" << std::endl;
+    if(indexofDim==numElements) {
+        std::cout << "err: indexof is full" << std::endl;
         return true;
     }
-    for(i=hash((int)x); table[i]!=NULL; i=(i+1)%indexDim) {}
+    for(i=hash((int)x); table[i]!=NULL; i=(i+1)%indexofDim) {}
     table[i]=&x;
     numElements++;
     return false;
 }
 
-template <class T> bool index<T>::remove(T & x) {
+template <class T> bool indexof<T>::remove(T & x) {
     int i,count;
-    for(i=hash((int)x),count=0; table[i]!=&x && count!=indexDim; i=(i+1)%indexDim,count++) {};
-    if(count==indexDim) {
-        std::cout << "err: Miss in remove from index" << std::endl;
+    for(i=hash((int)x),count=0; table[i]!=&x && count!=indexofDim; i=(i+1)%indexofDim,count++) {};
+    if(count==indexofDim) {
+        std::cout << "err: Miss in remove from indexof" << std::endl;
         return true;
     }
     table[i]=NULL;
@@ -39,27 +39,27 @@ template <class T> bool index<T>::remove(T & x) {
     return false;
 }
 
-template <class T> T* index<T>::find(int id) {
+template <class T> T* indexof<T>::find(int id) {
     int i,count;
-    for(i=hash(id),count=0; (int)(*table[i])!=id && count!=indexDim; i=(i+1)%indexDim,count++) {};
-    if(count==indexDim) {
-        std::cout << "err: index find miss" << std::endl;
+    for(i=hash(id),count=0; (int)(*table[i])!=id && count!=indexofDim; i=(i+1)%indexofDim,count++) {};
+    if(count==indexofDim) {
+        std::cout << "err: indexof find miss" << std::endl;
         return NULL;
     }
     return table[i];
 }
 
-template <class T> index<T>::~index() {
+template <class T> indexof<T>::~indexof() {
     if(numElements!=0) {
-        std::cout << "war: eliminating not empty index" << std::endl;
+        std::cout << "war: eliminating not empty indexof" << std::endl;
     }
     delete table;
     return;
 }
 
-template <class T> bool index<T>::clear() {
+template <class T> bool indexof<T>::clear() {
     int i;
-    for(i=0; i<indexDim && numElements!=0; i++) {
+    for(i=0; i<indexofDim && numElements!=0; i++) {
         if (table[i]!=NULL) {
             delete table[i]=NULL;
             numElements--;
@@ -68,9 +68,9 @@ template <class T> bool index<T>::clear() {
     return false;
 }
 
-template <class T> bool index<T>::freeAll() {
+template <class T> bool indexof<T>::freeAll() {
     int i;
-    for(i=0; i<indexDim && numElements!=0; i++) {
+    for(i=0; i<indexofDim && numElements!=0; i++) {
         if (table[i]!=NULL) {
             delete table[i];
             numElements--;
@@ -79,13 +79,13 @@ template <class T> bool index<T>::freeAll() {
     return false;
 }
 
-template <class T> void index<T>::forEach(void (T::*consumer)()) {
+template <class T> void indexof<T>::forEach(void (T::*consumer)()) {
     int i;
-    for(i=0; i<indexDim && numElements; i++) {
+    for(i=0; i<indexofDim && numElements; i++) {
         if (table[i]!=NULL) {
             (table[i]->*consumer)();
         }
     }
     return;
 }
-#endif // INDEX_H_INCLUDED
+#endif // indexof_H_INCLUDED

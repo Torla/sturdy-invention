@@ -30,6 +30,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
@@ -42,6 +43,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="position.cpp" />
 		<Unit filename="position.h" />
+		<Unit filename="screen.cpp" />
+		<Unit filename="screen.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
