@@ -5,6 +5,20 @@
 
 #include "grafic.h"
 
+
+namespace screenPar {
+const int WinHeight=600;
+const int WinWidth=1025;
+const int MapHeight=500;
+const int MapWidth=1025;
+const int MapPosx=0;
+const int MapPosy=100;
+const int HudPosx=0;
+const int HudPosy=0;
+const int HudHeight=100;
+const int HudWidth=1025;
+}
+
 enum tile {
     EMPTY,
     TEST,
@@ -20,7 +34,7 @@ class screen_class {
     window* win;
 public:
     screen_class() {
-        win=new window("Test",1000,400);
+        win=new window("Test",screenPar::WinWidth,screenPar::WinHeight);
         clear();
         show();
     }
@@ -43,7 +57,7 @@ public:
 
 extern screen_class screen;
 
-class screnable{
+class screnable {
 public:
     virtual bool show()=0;
 };

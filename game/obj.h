@@ -8,7 +8,9 @@
 #include "screen.h"
 #include "position.h"
 
-class obj:public indexable,public screnable{
+
+
+class obj:public indexable,public screnable {
     static int id_counter;
     int id;
 protected:
@@ -18,13 +20,22 @@ public:
     direction dir;
     static indexof<obj> ind;
     obj(int x,int y,direction dir=N,tile t=EMPTY);
-    ~obj();
-    operator int() const {return id;}
-    virtual bool show(){return false;}
-    virtual operator std::string() const{
+    virtual ~obj();
+    direction getDirection() {
+        return dir;
+    }
+    void setDirection(direction dir) {
+        this->dir=dir;
+    }
+    operator int() const {
+        return id;
+    }
+    virtual bool show();
+    virtual operator std::string() const {
         std::stringstream s;
         s << " " <<"id: "<<id << " tile:" << t << " pos:" << (std::string)pos << " dir:" << dir << " ";
-        return s.str();}
+        return s.str();
+    }
 };
 
 

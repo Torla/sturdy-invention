@@ -53,7 +53,7 @@ template <class T> indexof<T>::~indexof() {
     if(numElements!=0) {
         std::cout << "war: eliminating not empty indexof" << std::endl;
     }
-    delete table;
+    delete[] table;
     return;
 }
 

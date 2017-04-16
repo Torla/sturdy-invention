@@ -41,6 +41,8 @@
 		<Unit filename="index.h" />
 		<Unit filename="index_imp.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="obj.cpp" />
+		<Unit filename="obj.h" />
 		<Unit filename="position.cpp" />
 		<Unit filename="position.h" />
 		<Unit filename="screen.cpp" />

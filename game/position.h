@@ -34,13 +34,13 @@ public:
     }
 };
 
-enum direction{N=0,
-NW=45,
-W=90,
-SW=135,
-S=180,
-SE=225,
-E=270,
-NE=315,
-};
+enum direction {N=0,
+                NE=45,
+                E=90,
+                SE=135,
+                S=180,
+                SW=225,
+                W=270,
+                NW=315,
+               };
 #endif // POSITION_H_INCLUDED

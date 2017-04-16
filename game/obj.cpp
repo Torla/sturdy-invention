@@ -7,15 +7,21 @@ const int indexDim=1000;
 int obj::id_counter=0;
 indexof<obj> obj::ind(indexDim);
 
-obj::obj(int x,int y,direction dir,tile t):pos(x,y){
+obj::obj(int x,int y,direction dir,tile t):pos(x,y) {
     id=id_counter++;
     this->dir=dir;
     this->t=t;
-    if(ind.add(*this)){
+    if(ind.add(*this)) {
         std::cout << "Err: inpossible adding obj in index (obj id " << id << ")" << std::endl;
     }
 }
 
-obj::~obj(){
-ind.remove(*this);
+obj::~obj() {
+    ind.remove(*this);
+}
+
+
+bool obj::show() {
+    screen.put(t,pos.get_position_x()*20+screenPar::MapPosx,pos.get_position_y()*20+screenPar::MapPosy,20,20,dir);
+    return false;
 }
