@@ -17,6 +17,10 @@ screnable::screnable(){
 screen.addToShow(this);
 }
 
+screnable::~screnable(){
+screen.removeToShow(this);
+}
+
 void screen_class::putOnMap(tile t,int x,int y, int angle){
     if(t==EMPTY) return;
     int tileDimH=MapHeight/mapPar::MapHeight;

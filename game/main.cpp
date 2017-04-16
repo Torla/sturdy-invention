@@ -12,15 +12,17 @@ using namespace std;
 
 
 int main() {
-    obj* o=new obj(20,10,N,TEST2);
-    obj* o2=new obj(11,10,N,TEST2);
-    cout << (std::string)*map(11,10);
+    new obj(20,10,N,TEST2);
+    new obj(11,10,N,TEST2);
+    new obj(11,10,N,TEST);
+    new obj(9,10,N,TEST2);
     screen.show();
     SDL_Delay(1000);
-    delete o;
-    delete o2;
-    return 0;
+    obj::ind.freeAll();
+    screen.show();
+    SDL_Delay(1000);
     SDL_Quit();
     IMG_Quit();
+    return 0;
 }
 

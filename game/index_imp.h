@@ -73,7 +73,6 @@ template <class T> bool indexof<T>::freeAll() {
     for(i=0; i<indexofDim && numElements!=0; i++) {
         if (table[i]!=NULL) {
             delete table[i];
-            numElements--;
         }
     }
     return false;

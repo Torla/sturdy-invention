@@ -35,6 +35,7 @@ extern std::array<texture*,TILENUM> tileset;
 class screnable {
 public:
     screnable();
+    ~screnable();
     virtual bool show()=0;
 };
 
