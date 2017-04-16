@@ -22,6 +22,7 @@ const int HudWidth=1025;
 
 enum tile {
     EMPTY,
+    STANDARD_FLOOR,
     TEST,
     TEST2,
     TEST3,
@@ -66,8 +67,10 @@ public:
         win->show();
     }
     void put(tile t,int x,int y,int w,int h,int angle=0) {
+        if(t==EMPTY) return;
         win->put(tileset[t],x,y,w,h,angle);
     }
+    void putOnMap(tile,int,int,int);
 };
 
 extern screen_class screen;

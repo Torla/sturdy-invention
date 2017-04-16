@@ -14,7 +14,7 @@ using namespace std;
 int main() {
     obj* o=new obj(20,10,N,TEST2);
     obj* o2=new obj(11,10,N,TEST2);
-    cout << (std::string)*map(20,10);
+    cout << (std::string)*map(11,10);
     screen.show();
     SDL_Delay(1000);
     delete o;

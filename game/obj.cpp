@@ -24,6 +24,6 @@ obj::~obj() {
 
 
 bool obj::show() {
-    screen.put(t,pos.get_position_x()*20+screenPar::MapPosx,pos.get_position_y()*20+screenPar::MapPosy,20,20,dir);
+    screen.putOnMap(t,pos.get_position_x(),pos.get_position_y(),dir);
     return false;
 }

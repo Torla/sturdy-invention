@@ -12,12 +12,12 @@ const int MapHeight=20;
 const int MapWidth=41;
 }
 
-class mapCell {
+class mapCell{
     tile floor_tile;
     bool blocked;
 public:
     std::list<int> objectHere;
-    mapCell(tile t=EMPTY):floor_tile(t),blocked(false) {};
+    mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false) {};
     bool isBlocked() {
         return blocked;
     }
@@ -36,6 +36,9 @@ public:
     void clear(){
         objectHere.clear();
     }
+    void show(int x,int y){
+        screen.putOnMap(floor_tile,x,y,0);
+    }
     operator std::string() {
         std::stringstream s;
         s << "tile: " << floor_tile << " Blocked:" << blocked << " Object here: " << std::endl;
@@ -47,15 +50,15 @@ public:
 };
 
 
-class mapClass{
+class mapClass:screnable{
 
 mapCell map[mapPar::MapWidth][mapPar::MapHeight];
 
 public:
-    mapClass(){};
-    mapCell* operator()(int x,int y){return &map[x][y];}
-    mapCell* operator()(position pos){return &map[pos.get_position_x()][pos.get_position_y()];}
-
+    mapClass():screnable(){};
+    mapCell* operator()(int x,int y);
+    mapCell* operator()(position pos){return (*this)(pos.get_position_x(),pos.get_position_y());}
+    bool show();
 };
 
 extern mapClass map;
