@@ -13,14 +13,15 @@
 class obj:public indexable,public screnable {
     static int id_counter;
     int id;
+    position pos;
 protected:
     tile t;
 public:
-    position pos;
     direction dir;
     static indexof<obj> ind;
     obj(int x,int y,direction dir=N,tile t=EMPTY);
     virtual ~obj();
+    position getPosition(){return pos;}
     direction getDirection() {
         return dir;
     }

@@ -7,3 +7,8 @@ std::array<texture*,TILENUM> tileset = {
     new texture("img/test.bmp",screen.getWindow()),
     new texture("img/test2.bmp",screen.getWindow(),true),
 };
+
+
+screnable::screnable(){
+screen.addToShow(this);
+}

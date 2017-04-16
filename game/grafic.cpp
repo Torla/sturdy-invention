@@ -22,7 +22,7 @@ window::window(const char* nome,int w,int h) {
         std::cout << "SDL_window create error " << SDL_GetError() << std::endl;
         return;
     }
-    SDL_SetRenderDrawColor(renderer,0xFF,0xFF,0xFF,0xFF);
+    SDL_SetRenderDrawColor(renderer,0x0,0x0,0x0,0x0);
     return;
 }
 

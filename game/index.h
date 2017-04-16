@@ -26,6 +26,7 @@ public:
     bool clear();
     bool freeAll();
     void forEach(void (T::*consumer)());
+    T* operator[](int id){return find(id);}
 };
 
 

@@ -8,8 +8,8 @@
 #include <sstream>
 
 namespace mapPar {
-const int MapHeight=41;
-const int Mapwidth=20;
+const int MapHeight=20;
+const int MapWidth=41;
 }
 
 class mapCell {
@@ -17,7 +17,7 @@ class mapCell {
     bool blocked;
 public:
     std::list<int> objectHere;
-    mapCell(tile t):floor_tile(t),blocked(false) {};
+    mapCell(tile t=EMPTY):floor_tile(t),blocked(false) {};
     bool isBlocked() {
         return blocked;
     }
@@ -33,15 +33,30 @@ public:
     void remove(int id) {
         objectHere.remove(id);
     }
+    void clear(){
+        objectHere.clear();
+    }
     operator std::string() {
         std::stringstream s;
         s << "tile: " << floor_tile << " Blocked:" << blocked << " Object here: " << std::endl;
         for(int id:objectHere) {
-            s  << "    " << id << " " << (std::string)(*(obj::ind.find(id))) << std::endl;
+            s  << "    " << id << " " << (std::string)(*(obj::ind[id])) << std::endl;
         }
         return s.str();
     }
 };
 
 
+class mapClass{
+
+mapCell map[mapPar::MapWidth][mapPar::MapHeight];
+
+public:
+    mapClass(){};
+    mapCell* operator()(int x,int y){return &map[x][y];}
+    mapCell* operator()(position pos){return &map[pos.get_position_x()][pos.get_position_y()];}
+
+};
+
+extern mapClass map;
 #endif // MAP_H_INCLUDED
