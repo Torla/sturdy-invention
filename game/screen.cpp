@@ -13,7 +13,7 @@ std::array<texture*,TILENUM> tileset = {
 };
 
 
-screnable::screnable(){
+screnable::screnable(int layer):layer(layer){
 screen.addToShow(this);
 }
 

@@ -41,11 +41,15 @@
 		<Unit filename="index.h" />
 		<Unit filename="index_imp.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="map.cpp" />
+		<Unit filename="map.h" />
 		<Unit filename="obj.cpp" />
 		<Unit filename="obj.h" />
 		<Unit filename="position.cpp" />
 		<Unit filename="position.h" />
-		<Unit filename="screen.cpp" />
+		<Unit filename="screen.cpp">
+			<Option weight="0" />
+		</Unit>
 		<Unit filename="screen.h" />
 		<Extensions>
 			<code_completion />

@@ -19,7 +19,7 @@ protected:
 public:
     direction dir;
     static indexof<obj> ind;
-    obj(int x,int y,direction dir=N,tile t=EMPTY);
+    obj(int x,int y,direction dir=N,tile t=EMPTY,int layer=2);
     virtual ~obj();
     position getPosition(){return pos;}
     direction getDirection() {

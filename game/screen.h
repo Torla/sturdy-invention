@@ -2,7 +2,7 @@
 #define SCREEN_H_INCLUDED
 
 #include <array>
-#include <list>
+#include <set>
 
 #include "grafic.h"
 
@@ -33,15 +33,19 @@ enum tile {
 extern std::array<texture*,TILENUM> tileset;
 
 class screnable {
+    int layer;
 public:
-    screnable();
-    ~screnable();
+    screnable(int layer);
+    virtual ~screnable();
     virtual bool show()=0;
+    struct compareClass{
+    bool operator()(screnable* const& a,screnable* const& b) const {return a->layer<b->layer;}
+    };
 };
 
 class screen_class {
     window* win;
-    std::list<screnable*> toShowList;
+    std::set<screnable*,screnable::compareClass> toShowList;
 public:
     screen_class() {
         win=new window("Test",screenPar::WinWidth,screenPar::WinHeight);
@@ -55,10 +59,10 @@ public:
         return win;
     }
     void addToShow(screnable* inst){
-        toShowList.push_back(inst);
+        toShowList.insert(inst);
     }
     void removeToShow(screnable* inst){
-        toShowList.remove(inst);
+        toShowList.erase(inst);
     }
     void show() {
         win->clear();
