@@ -38,8 +38,11 @@ public:
     screnable(int layer);
     virtual ~screnable();
     virtual bool show()=0;
-    struct compareClass{
-    bool operator()(screnable* const& a,screnable* const& b) const {return a->layer<b->layer;}
+    struct compareClass {
+        bool operator()(screnable* const& a,screnable* const& b) const {
+            if(a->layer!=b->layer)return a->layer<b->layer;
+            else return a<b;
+        }
     };
 };
 
@@ -58,15 +61,15 @@ public:
     window* getWindow() {
         return win;
     }
-    void addToShow(screnable* inst){
+    void addToShow(screnable* inst) {
         toShowList.insert(inst);
     }
-    void removeToShow(screnable* inst){
+    void removeToShow(screnable* inst) {
         toShowList.erase(inst);
     }
     void show() {
         win->clear();
-        for(screnable* i:toShowList){
+        for(screnable* i:toShowList) {
             i->show();
         }
         win->show();

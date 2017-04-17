@@ -12,7 +12,7 @@ const int MapHeight=20;
 const int MapWidth=41;
 }
 
-class mapCell{
+class mapCell {
     tile floor_tile;
     bool blocked;
     std::list<int> objectHere;
@@ -33,12 +33,16 @@ public:
     void remove(int id) {
         objectHere.remove(id);
     }
-    void clear(){
+    void clear() {
         objectHere.clear();
     }
-    std::list<int>::iterator begin(){return objectHere.begin();}
-    std::list<int>::iterator end(){return objectHere.end();}
-    void show(int x,int y){
+    std::list<int>::iterator begin() {
+        return objectHere.begin();
+    }
+    std::list<int>::iterator end() {
+        return objectHere.end();
+    }
+    void show(int x,int y) {
         screen.putOnMap(floor_tile,x,y,0);
     }
     operator std::string() {
@@ -52,14 +56,16 @@ public:
 };
 
 
-class mapClass:screnable{
+class mapClass:screnable {
 
-mapCell map[mapPar::MapWidth][mapPar::MapHeight];
+    mapCell map[mapPar::MapWidth][mapPar::MapHeight];
 
 public:
-    mapClass():screnable(1){};
+    mapClass():screnable(1) {};
     mapCell* operator()(int x,int y);
-    mapCell* operator()(position pos){return (*this)(pos.get_position_x(),pos.get_position_y());}
+    mapCell* operator()(position pos) {
+        return (*this)(pos.get_position_x(),pos.get_position_y());
+    }
     bool show();
 };
 

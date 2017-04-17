@@ -21,7 +21,9 @@ public:
     static indexof<obj> ind;
     obj(int x,int y,direction dir=N,tile t=EMPTY,int layer=2);
     virtual ~obj();
-    position getPosition(){return pos;}
+    position getPosition() {
+        return pos;
+    }
     direction getDirection() {
         return dir;
     }

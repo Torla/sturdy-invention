@@ -13,15 +13,15 @@ std::array<texture*,TILENUM> tileset = {
 };
 
 
-screnable::screnable(int layer):layer(layer){
-screen.addToShow(this);
+screnable::screnable(int layer):layer(layer) {
+    screen.addToShow(this);
 }
 
-screnable::~screnable(){
-screen.removeToShow(this);
+screnable::~screnable() {
+    screen.removeToShow(this);
 }
 
-void screen_class::putOnMap(tile t,int x,int y, int angle){
+void screen_class::putOnMap(tile t,int x,int y, int angle) {
     if(t==EMPTY) return;
     int tileDimH=MapHeight/mapPar::MapHeight;
     int tileDimW=MapWidth/mapPar::MapWidth;
