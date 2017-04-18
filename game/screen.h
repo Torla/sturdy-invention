@@ -3,6 +3,7 @@
 
 #include <array>
 #include <set>
+#include <algorithm>
 
 #include "grafic.h"
 

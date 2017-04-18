@@ -12,7 +12,6 @@ std::array<texture*,TILENUM> tileset = {
     new texture("img/test2.bmp",screen.getWindow(),true),
 };
 
-
 screnable::screnable(int layer):layer(layer) {
     screen.addToShow(this);
 }

@@ -2,6 +2,7 @@
 #define indexof_H_INCLUDED
 
 #include <iostream>
+#include <array>
 
 class indexable {
 public:
@@ -9,23 +10,23 @@ public:
 };
 
 
-template <class T> class indexof {
+template <class T,int size> class indexof {
     int indexofDim;
-    T **table;
+    std::array<T*,size> table;
     int numElements;
 
     int hash(const int x) {
         return x%indexofDim;
     }
 public:
-    indexof(int size);
+    indexof();
     bool add(T & x);
     bool remove(T & x);
     T* find(int id);
     ~indexof();
     bool clear();
     bool freeAll();
-    void forEach(void (T::*consumer)());
+    void forEach(void (*consumer)(T* &));
     T* operator[](int id) {
         return find(id);
     }

@@ -7,15 +7,11 @@
 
 
 
-template <class T> indexof<T>::indexof(int size) {
-    table=new T*[size];
-    for(int i=0; i<size; i++) {
-        table[i]=NULL;
-    }
+template <class T,int size> indexof<T,size>::indexof() {
     indexofDim=size;
     numElements=0;
 }
-template <class T> bool indexof<T>::add(T & x) {
+template <class T,int size> bool indexof<T,size>::add(T & x) {
     int i;
     if(indexofDim==numElements) {
         std::cout << "err: indexof is full" << std::endl;
@@ -27,7 +23,7 @@ template <class T> bool indexof<T>::add(T & x) {
     return false;
 }
 
-template <class T> bool indexof<T>::remove(T & x) {
+template <class T,int size> bool indexof<T,size>::remove(T & x) {
     int i,count;
     for(i=hash((int)x),count=0; table[i]!=&x && count!=indexofDim; i=(i+1)%indexofDim,count++) {};
     if(count==indexofDim) {
@@ -39,7 +35,7 @@ template <class T> bool indexof<T>::remove(T & x) {
     return false;
 }
 
-template <class T> T* indexof<T>::find(int id) {
+template <class T,int size> T* indexof<T,size>::find(int id) {
     int i,count;
     for(i=hash(id),count=0; (int)(*table[i])!=id && count!=indexofDim; i=(i+1)%indexofDim,count++) {};
     if(count==indexofDim) {
@@ -49,15 +45,14 @@ template <class T> T* indexof<T>::find(int id) {
     return table[i];
 }
 
-template <class T> indexof<T>::~indexof() {
+template <class T,int size> indexof<T,size>::~indexof() {
     if(numElements!=0) {
         std::cout << "war: eliminating not empty indexof" << std::endl;
     }
-    delete[] table;
     return;
 }
 
-template <class T> bool indexof<T>::clear() {
+template <class T,int size> bool indexof<T,size>::clear() {
     int i;
     for(i=0; i<indexofDim && numElements!=0; i++) {
         if (table[i]!=NULL) {
@@ -68,21 +63,20 @@ template <class T> bool indexof<T>::clear() {
     return false;
 }
 
-template <class T> bool indexof<T>::freeAll() {
-    int i;
-    for(i=0; i<indexofDim && numElements!=0; i++) {
-        if (table[i]!=NULL) {
-            delete table[i];
+template <class T,int size> bool indexof<T,size>::freeAll() {
+    for(T* t:table) {
+        if (t!=NULL) {
+            delete t;
         }
     }
     return false;
 }
 
-template <class T> void indexof<T>::forEach(void (T::*consumer)()) {
+template <class T,int size> void indexof<T,size>::forEach(void (*consumer)(T* &)) {
     int i;
     for(i=0; i<indexofDim && numElements; i++) {
         if (table[i]!=NULL) {
-            (table[i]->*consumer)();
+            consumer(table[i]);
         }
     }
     return;

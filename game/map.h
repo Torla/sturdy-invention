@@ -15,7 +15,7 @@ const int MapWidth=41;
 class mapCell {
     tile floor_tile;
     bool blocked;
-    std::list<int> objectHere;
+    std::set<int> objectHere;
 public:
     mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false) {};
     bool isBlocked() {
@@ -28,18 +28,18 @@ public:
         return objectHere.empty();
     }
     void add(int id) {
-        objectHere.push_front(id);
+        objectHere.insert(id);
     }
     void remove(int id) {
-        objectHere.remove(id);
+        objectHere.erase(id);
     }
     void clear() {
         objectHere.clear();
     }
-    std::list<int>::iterator begin() {
+    std::set<int>::iterator begin() {
         return objectHere.begin();
     }
-    std::list<int>::iterator end() {
+    std::set<int>::iterator end() {
         return objectHere.end();
     }
     void show(int x,int y) {
