@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <array>
+#include <unordered_map>
 
 class indexable {
 public:
@@ -10,14 +11,10 @@ public:
 };
 
 
-template <class T,int size> class indexof {
-    int indexofDim;
-    std::array<T*,size> table;
+template <class T> class indexof {
+    std::unordered_map<int,T*> table;
     int numElements;
 
-    int hash(const int x) {
-        return x%indexofDim;
-    }
 public:
     indexof();
     bool add(T & x);

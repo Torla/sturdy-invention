@@ -21,4 +21,3 @@ bool mapClass::show() {
     return false;
 }
 
-

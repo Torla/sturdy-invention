@@ -6,7 +6,7 @@
 using namespace objPar;
 
 int obj::id_counter=0;
-indexof<obj,indexDim> obj::ind;
+indexof<obj> obj::ind;
 
 obj::obj(int x,int y,direction dir,tile t,int layer):screnable(layer),pos(x,y),dir(dir) {
     id=id_counter++;

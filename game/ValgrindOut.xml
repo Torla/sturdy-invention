@@ -12,13 +12,14 @@
   <line>Command: /home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game </line>
 </preamble>
 
-<pid>7805</pid>
+<pid>16280</pid>
 <ppid>3636</ppid>
 <tool>memcheck</tool>
 
 <args>
   <vargv>
     <exe>/usr/bin/valgrind.bin</exe>
+    <arg>--show-possibly-lost=no</arg>
     <arg>--leak-check=full</arg>
     <arg>--track-origins=yes</arg>
     <arg>--xml=yes</arg>
@@ -32,7 +33,7 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.121 </time>
+  <time>00:00:00:00.074 </time>
 </status>
 
 <error>
@@ -98,7 +99,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
   </stack>
-  <auxwhat>Address 0xc9ad813 is 35 bytes inside a block of size 16,384 alloc'd</auxwhat>
+  <auxwhat>Address 0xc9ab893 is 35 bytes inside a block of size 16,384 alloc'd</auxwhat>
   <stack>
     <frame>
       <ip>0x4C2FB55</ip>
@@ -123,7 +124,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x401A54</ip>
+      <ip>0x40244A</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -131,31 +132,31 @@
       <line>10</line>
     </frame>
     <frame>
-      <ip>0x4039AC</ip>
+      <ip>0x401DCC</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>37</line>
+      <line>46</line>
     </frame>
     <frame>
-      <ip>0x403840</ip>
+      <ip>0x401BC0</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__static_initialization_and_destruction_0(int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.cpp</file>
-      <line>3</line>
+      <line>6</line>
     </frame>
     <frame>
-      <ip>0x403936</ip>
+      <ip>0x401D18</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>_GLOBAL__sub_I_screen</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.cpp</file>
-      <line>9</line>
+      <line>25</line>
     </frame>
     <frame>
-      <ip>0x403ABC</ip>
+      <ip>0x40465C</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__libc_csu_init</fn>
     </frame>
@@ -181,79 +182,16 @@
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:09.201 </time>
+  <time>00:00:00:10.188 </time>
 </status>
 
 <error>
-  <unique>0x6c</unique>
+  <unique>0x16f</unique>
   <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
+  <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>32 bytes in 2 blocks are possibly lost in loss record 106 of 386</text>
-    <leakedbytes>32</leakedbytes>
-    <leakedblocks>2</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2DB8F</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>malloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9E3F3D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCFFE67F</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCFFF38B</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xD000CAD</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xD001404</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xD00370A</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-      <fn>XML_ParseBuffer</fn>
-    </frame>
-    <frame>
-      <ip>0xE9E525F</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76C23</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xd0</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>72 bytes in 1 blocks are possibly lost in loss record 206 of 386</text>
-    <leakedbytes>72</leakedbytes>
+    <text>40 bytes in 1 blocks are definitely lost in loss record 365 of 1,463</text>
+    <leakedbytes>40</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
@@ -267,924 +205,35 @@
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9509AC</ip>
+      <ip>0xEA534B2</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEAD55A8</ip>
+      <ip>0xEA54206</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEAD5F7D</ip>
+      <ip>0xEA3BDA6</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA81EC0</ip>
+      <ip>0xE8B0581</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA76EC4</ip>
+      <ip>0xE736F1C</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9E2EAE</ip>
+      <ip>0xE7CFCE6</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xd1</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>72 bytes in 1 blocks are possibly lost in loss record 207 of 386</text>
-    <leakedbytes>72</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9509AC</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20A6C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xd4</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>80 bytes in 1 blocks are possibly lost in loss record 210 of 386</text>
-    <leakedbytes>80</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FD5F</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>realloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF44EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF4621E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF48689</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-      <fn>drm_intel_gem_bo_context_exec</fn>
-    </frame>
-    <frame>
-      <ip>0xEA6949C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA7763C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDCA7BB</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0x403975</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>window::show()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>grafic.h</file>
-      <line>41</line>
-    </frame>
-    <frame>
-      <ip>0x403A6A</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>screen_class::show()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.h</file>
-      <line>51</line>
-    </frame>
-    <frame>
-      <ip>0x4039CB</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>screen_class::screen_class()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.h</file>
-      <line>39</line>
-    </frame>
-    <frame>
-      <ip>0x403840</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>__static_initialization_and_destruction_0(int, int)</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>3</line>
-    </frame>
-    <frame>
-      <ip>0x403936</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>_GLOBAL__sub_I_screen</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>9</line>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xde</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>104 bytes in 1 blocks are possibly lost in loss record 220 of 386</text>
-    <leakedbytes>104</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD55D0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xdf</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>104 bytes in 1 blocks are possibly lost in loss record 221 of 386</text>
-    <leakedbytes>104</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20A9E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEA37E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xee</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>144 bytes in 1 blocks are possibly lost in loss record 236 of 386</text>
-    <leakedbytes>144</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76C07</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEA37E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEC28B</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEBF34</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xf8</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>168 bytes in 1 blocks are possibly lost in loss record 246 of 386</text>
-    <leakedbytes>168</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FD5F</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>realloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE94FF00</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950CAF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD56C4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0xf9</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>168 bytes in 1 blocks are possibly lost in loss record 247 of 386</text>
-    <leakedbytes>168</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FD5F</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>realloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE94FF00</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950CAF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20ADF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x10c</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 266 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF47682</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA68C57</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA68CD8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA3370D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2B70</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2CCD</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9A36</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9BDBA</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C0B8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXCreateContext</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF859F</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x10d</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 267 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF47682</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA4266F</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA3373E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2B70</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2CCD</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9A36</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9BDBA</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C0B8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXCreateContext</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF859F</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEB0EF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x10e</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 268 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF47682</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA494B1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA4BDE2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA3374E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2B70</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2CCD</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9A36</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9BDBA</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C0B8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXCreateContext</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF859F</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x10f</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 269 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF47682</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA68C57</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA69092</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA6D7F1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA33756</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2B70</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2CCD</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9A36</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9BDBA</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C0B8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXCreateContext</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x110</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 270 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA70ED0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA705C9</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA71664</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA6D984</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE79BB27</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA33FB0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA34630</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA3471A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2815</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDCAA1A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x111</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 271 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA71426</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA716C6</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA6D984</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE79BB27</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA33FB0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA34630</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA3471A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2815</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDCAA1A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9F144</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXMakeContextCurrent</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x112</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>256 bytes in 1 blocks are possibly lost in loss record 272 of 386</text>
-    <leakedbytes>256</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF47018</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA70ED0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA719DC</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA25FBF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA2617F</ip>
+      <ip>0xE7CFD80</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA27665</ip>
+      <ip>0xE706847</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
@@ -1192,7 +241,69 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x403955</ip>
+      <ip>0x401D49</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::clear()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.h</file>
+      <line>38</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x170</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>40 bytes in 1 blocks are definitely lost in loss record 366 of 1,463</text>
+    <leakedbytes>40</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB55</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xE9500C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51399</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51B5D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA42EB9</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE73C52F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7CFC57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7CFD80</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE706847</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E957E3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x401D49</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::clear()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -1200,40 +311,330 @@
       <line>38</line>
     </frame>
     <frame>
-      <ip>0x403A4C</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>screen_class::clear()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.h</file>
-      <line>48</line>
-    </frame>
-    <frame>
-      <ip>0x4039BF</ip>
+      <ip>0x401DE2</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>38</line>
-    </frame>
-    <frame>
-      <ip>0x403840</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>__static_initialization_and_destruction_0(int, int)</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>3</line>
+      <line>47</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x11d</unique>
+  <unique>0x189</unique>
   <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
+  <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>316 bytes in 16 blocks are possibly lost in loss record 283 of 386</text>
-    <leakedbytes>316</leakedbytes>
-    <leakedblocks>16</leakedblocks>
+    <text>48 bytes in 1 blocks are definitely lost in loss record 391 of 1,463</text>
+    <leakedbytes>48</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2E0EF</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+    </frame>
+    <frame>
+      <ip>0x4028C8</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>main</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>main.cpp</file>
+      <line>16</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x321</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>168 bytes in 1 blocks are definitely lost in loss record 799 of 1,463</text>
+    <leakedbytes>168</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB55</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xE9500C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA5136B</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51B5D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA42EB9</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE73C52F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7CFC57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7CFD80</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE706847</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E957E3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x401D49</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::clear()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.h</file>
+      <line>38</line>
+    </frame>
+    <frame>
+      <ip>0x401DE2</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>47</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x322</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>168 bytes in 1 blocks are definitely lost in loss record 800 of 1,463</text>
+    <leakedbytes>168</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB55</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xE9500C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51381</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51B5D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA42EB9</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE73C52F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7CFC57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7CFD80</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE706847</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E957E3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x401D49</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::clear()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.h</file>
+      <line>38</line>
+    </frame>
+    <frame>
+      <ip>0x401DE2</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>47</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x341</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>200 bytes in 5 blocks are definitely lost in loss record 831 of 1,463</text>
+    <leakedbytes>200</leakedbytes>
+    <leakedblocks>5</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB55</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xE9500C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA534B2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA54206</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA3BDA6</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE8B0581</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7C8AA7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E9A283</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E978EE</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8FE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402511</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::window(char const*, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x401DCC</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>46</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x342</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>200 bytes in 5 blocks are definitely lost in loss record 832 of 1,463</text>
+    <leakedbytes>200</leakedbytes>
+    <leakedblocks>5</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB55</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xE9500C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51399</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51B5D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA3BE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE8B0581</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7C8AA7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E9A283</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E978EE</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8FE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402511</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::window(char const*, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x401DCC</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>46</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x3ac</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>280 (56 direct, 224 indirect) bytes in 1 blocks are definitely lost in loss record 938 of 1,463</text>
+    <leakedbytes>280</leakedbytes>
+    <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
     <frame>
@@ -1242,61 +643,65 @@
       <fn>malloc</fn>
     </frame>
     <frame>
-      <ip>0xE9E3DC4</ip>
+      <ip>0xE9E307C</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCFFE67F</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCFFF38B</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xD000CAD</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xD001404</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-    </frame>
-    <frame>
-      <ip>0xD00370A</ip>
-      <obj>/lib/x86_64-linux-gnu/libexpat.so.1.6.0</obj>
-      <fn>XML_ParseBuffer</fn>
-    </frame>
-    <frame>
-      <ip>0xE9E525F</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76C23</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
+      <ip>0xCDC968C</ip>
       <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
     </frame>
     <frame>
-      <ip>0xCDA0603</ip>
+      <ip>0xCDC71E7</ip>
       <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0xCDCA9D8</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0xCD9F144</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <fn>glXMakeContextCurrent</fn>
+    </frame>
+    <frame>
+      <ip>0x4EF8179</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4EF847A</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4EEB0EF</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E9732F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8FE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402511</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::window(char const*, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>20</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x12b</unique>
+  <unique>0x492</unique>
   <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
+  <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>512 bytes in 1 blocks are possibly lost in loss record 297 of 386</text>
-    <leakedbytes>512</leakedbytes>
-    <leakedblocks>1</leakedblocks>
+    <text>840 bytes in 5 blocks are definitely lost in loss record 1,168 of 1,463</text>
+    <leakedbytes>840</leakedbytes>
+    <leakedblocks>5</leakedblocks>
   </xwhat>
   <stack>
     <frame>
@@ -1305,773 +710,136 @@
       <fn>calloc</fn>
     </frame>
     <frame>
-      <ip>0xE9E51C9</ip>
+      <ip>0xE9500C1</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA76C23</ip>
+      <ip>0xEA5136B</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9E2EAE</ip>
+      <ip>0xEA51B5D</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <ip>0xEA3BE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <ip>0xE8B0581</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <ip>0xE7C8AA7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
+      <ip>0x4E9A283</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x4EEA37E</ip>
+      <ip>0x4E978EE</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x4EEC28B</ip>
+      <ip>0x4E8FE12</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x4EEBF34</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x12e</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>560 bytes in 1 blocks are possibly lost in loss record 300 of 386</text>
-    <leakedbytes>560</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FD5F</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>realloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF44EA8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF4621E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEF48689</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-      <fn>drm_intel_gem_bo_context_exec</fn>
-    </frame>
-    <frame>
-      <ip>0xEA6949C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA7763C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDCA7BB</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0x403975</ip>
+      <ip>0x402511</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>window::show()</fn>
+      <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>grafic.h</file>
-      <line>41</line>
+      <file>grafic.cpp</file>
+      <line>20</line>
     </frame>
     <frame>
-      <ip>0x403A6A</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>screen_class::show()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.h</file>
-      <line>51</line>
-    </frame>
-    <frame>
-      <ip>0x4039CB</ip>
+      <ip>0x401DCC</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>39</line>
-    </frame>
-    <frame>
-      <ip>0x403840</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>__static_initialization_and_destruction_0(int, int)</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>3</line>
-    </frame>
-    <frame>
-      <ip>0x403936</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>_GLOBAL__sub_I_screen</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>9</line>
+      <line>46</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x139</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>824 bytes in 1 blocks are possibly lost in loss record 311 of 386</text>
-    <leakedbytes>824</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEA37E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEC28B</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x140</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,024 bytes in 16 blocks are possibly lost in loss record 318 of 386</text>
-    <leakedbytes>1024</leakedbytes>
-    <leakedblocks>16</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950CC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD56C4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x141</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,024 bytes in 16 blocks are possibly lost in loss record 319 of 386</text>
-    <leakedbytes>1024</leakedbytes>
-    <leakedblocks>16</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950CC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20ADF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x14f</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,664 bytes in 16 blocks are possibly lost in loss record 333 of 386</text>
-    <leakedbytes>1664</leakedbytes>
-    <leakedblocks>16</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950D71</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD57EF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x150</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,664 bytes in 16 blocks are possibly lost in loss record 334 of 386</text>
-    <leakedbytes>1664</leakedbytes>
-    <leakedblocks>16</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950D71</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20C00</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x151</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,712 bytes in 1 blocks are possibly lost in loss record 335 of 386</text>
-    <leakedbytes>1712</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20A53</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEA37E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x152</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,800 bytes in 1 blocks are possibly lost in loss record 336 of 386</text>
-    <leakedbytes>1800</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xEF48E6D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-      <fn>drm_intel_bufmgr_gem_init</fn>
-    </frame>
-    <frame>
-      <ip>0xEA76C4B</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEA37E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEC28B</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEBF34</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x154</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>1,968 bytes in 1 blocks are possibly lost in loss record 338 of 386</text>
-    <leakedbytes>1968</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5597</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x15a</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>2,048 bytes in 1 blocks are possibly lost in loss record 344 of 386</text>
-    <leakedbytes>2048</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9E51B3</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76C23</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEA37E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEC28B</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-    <frame>
-      <ip>0x4EEBF34</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x16a</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>4,032 bytes in 16 blocks are possibly lost in loss record 360 of 386</text>
-    <leakedbytes>4032</leakedbytes>
-    <leakedblocks>16</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950CE6</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEB20ADF</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x16d</unique>
+  <unique>0x493</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>4,096 bytes in 1 blocks are definitely lost in loss record 363 of 386</text>
+    <text>840 bytes in 5 blocks are definitely lost in loss record 1,169 of 1,463</text>
+    <leakedbytes>840</leakedbytes>
+    <leakedblocks>5</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2FB55</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xE9500C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51381</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA51B5D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA3BE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE8B0581</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7C8AA7</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E9A283</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E978EE</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8FE12</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402511</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::window(char const*, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x401DCC</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>46</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x55b</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,369 of 1,463</text>
     <leakedbytes>4096</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -2129,75 +897,12 @@
 </error>
 
 <error>
-  <unique>0x171</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>4,544 bytes in 16 blocks are possibly lost in loss record 367 of 386</text>
-    <leakedbytes>4544</leakedbytes>
-    <leakedblocks>16</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950CE6</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD56C4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x17e</unique>
+  <unique>0x55c</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>32,768 bytes in 1 blocks are definitely lost in loss record 380 of 386</text>
-    <leakedbytes>32768</leakedbytes>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,370 of 1,463</text>
+    <leakedbytes>4096</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
@@ -2206,59 +911,216 @@
       <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
     </frame>
     <frame>
-      <ip>0xEA68CB4</ip>
+      <ip>0xEA79E9F</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA68CD8</ip>
+      <ip>0xEA7A202</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA3370D</ip>
+      <ip>0xE7E77EA</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9E2B70</ip>
+      <ip>0xE7E7A31</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9E2CCD</ip>
+      <ip>0xE7E7E57</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCDC9A36</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9BDBA</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C0B8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXCreateContext</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF859F</ip>
+      <ip>0x4E95C53</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x4EEB0EF</ip>
+      <ip>0x4E8F385</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x4EEBF48</ip>
+      <ip>0x4E91F6C</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402786</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>61</line>
+    </frame>
+    <frame>
+      <ip>0x401C15</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__static_initialization_and_destruction_0(int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>10</line>
+    </frame>
+    <frame>
+      <ip>0x401D18</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>_GLOBAL__sub_I_screen</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>25</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x17f</unique>
+  <unique>0x55d</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>32,768 bytes in 1 blocks are definitely lost in loss record 381 of 386</text>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,371 of 1,463</text>
+    <leakedbytes>4096</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0xEA79E9F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA7A202</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E77EA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7A31</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7E57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E95C53</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8F385</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E91F6C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402786</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>61</line>
+    </frame>
+    <frame>
+      <ip>0x401C61</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__static_initialization_and_destruction_0(int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>11</line>
+    </frame>
+    <frame>
+      <ip>0x401D18</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>_GLOBAL__sub_I_screen</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>25</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x55e</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,372 of 1,463</text>
+    <leakedbytes>4096</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0xEA79E9F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA7A202</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E77EA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7A31</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7E57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E95C53</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8F385</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E91F6C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x402786</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>61</line>
+    </frame>
+    <frame>
+      <ip>0x401CAD</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__static_initialization_and_destruction_0(int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>12</line>
+    </frame>
+    <frame>
+      <ip>0x401D18</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>_GLOBAL__sub_I_screen</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>25</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x59e</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,436 of 1,463</text>
     <leakedbytes>32768</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -2316,253 +1178,201 @@
 </error>
 
 <error>
-  <unique>0x180</unique>
+  <unique>0x59f</unique>
   <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
+  <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>40,168 bytes in 1 blocks are possibly lost in loss record 382 of 386</text>
-    <leakedbytes>40168</leakedbytes>
+    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,437 of 1,463</text>
+    <leakedbytes>32768</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
     <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
     </frame>
     <frame>
-      <ip>0xE9500C1</ip>
+      <ip>0xEA68CB4</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9509C1</ip>
+      <ip>0xEA69092</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEB20A6C</ip>
+      <ip>0xEA7763C</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA81EC8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
+      <ip>0xCDCA7BB</ip>
       <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
     </frame>
     <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <ip>0x401D69</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>window::show()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.h</file>
+      <line>41</line>
     </frame>
     <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <ip>0x401DF1</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>48</line>
     </frame>
     <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
+      <ip>0x401BC0</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__static_initialization_and_destruction_0(int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>6</line>
     </frame>
     <frame>
-      <ip>0x4EF7CAE</ip>
+      <ip>0x401D18</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>_GLOBAL__sub_I_screen</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>25</line>
+    </frame>
+    <frame>
+      <ip>0x40465C</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__libc_csu_init</fn>
+    </frame>
+    <frame>
+      <ip>0x5C317BE</ip>
+      <obj>/lib/x86_64-linux-gnu/libc-2.23.so</obj>
+      <fn>(below main)</fn>
+      <dir>/build/glibc-9tT8Do/glibc-2.23/csu/../csu</dir>
+      <file>libc-start.c</file>
+      <line>247</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x5a0</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,438 of 1,463</text>
+    <leakedbytes>32768</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0xEA68CB4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA69092</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA68E8D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA35701</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE82E4B3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE81A1FB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE82B562</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE728979</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE729DE6</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E99C05</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E913B0</ip>
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x181</unique>
+  <unique>0x5b1</unique>
   <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
+  <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>46,312 bytes in 1 blocks are possibly lost in loss record 383 of 386</text>
-    <leakedbytes>46312</leakedbytes>
+    <text>65,536 bytes in 1 blocks are definitely lost in loss record 1,455 of 1,463</text>
+    <leakedbytes>65536</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
     <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
     </frame>
     <frame>
-      <ip>0xE9500C1</ip>
+      <ip>0xEA7C565</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9509C1</ip>
+      <ip>0xEA7C5B9</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEAD55A8</ip>
+      <ip>0xEA36ADC</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEAD5F7D</ip>
+      <ip>0xEA373C9</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA81EC0</ip>
+      <ip>0xEA376D5</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA76EC4</ip>
+      <ip>0xEA4C420</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE9E2EAE</ip>
+      <ip>0xEA35B3B</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x183</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>421,344 bytes in 1,672 blocks are possibly lost in loss record 385 of 386</text>
-    <leakedbytes>421344</leakedbytes>
-    <leakedblocks>1672</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
+      <ip>0xE82E4B3</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xE950A4E</ip>
+      <ip>0xE81A1FB</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEB20A6C</ip>
+      <ip>0xE82B562</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
     </frame>
     <frame>
-      <ip>0xEA81EC8</ip>
+      <ip>0xE728979</ip>
       <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
-    </frame>
-    <frame>
-      <ip>0x4EF7CAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x184</unique>
-  <tid>1</tid>
-  <kind>Leak_PossiblyLost</kind>
-  <xwhat>
-    <text>547,552 bytes in 1,928 blocks are possibly lost in loss record 386 of 386</text>
-    <leakedbytes>547552</leakedbytes>
-    <leakedblocks>1928</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2FB55</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-    </frame>
-    <frame>
-      <ip>0xE9500C1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE950A4E</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD55A8</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEAD5F7D</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA81EC0</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA76EC4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xE9E2EAE</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC9EB2</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCDA0603</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9C88A</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0xCD9CCC1</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-      <fn>glXQueryExtensionsString</fn>
     </frame>
   </stack>
 </error>

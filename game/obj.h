@@ -20,7 +20,7 @@ protected:
     tile t;
 public:
     direction dir;
-    static indexof<obj,objPar::indexDim> ind;
+    static indexof<obj> ind;
     obj(int x,int y,direction dir=N,tile t=EMPTY,int layer=2);
     virtual ~obj();
     position getPosition() {

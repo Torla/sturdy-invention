@@ -59,7 +59,7 @@ public:
     ~screen_class() {
         delete win;
     }
-    window* getWindow() {
+    window* getWindow() const {
         return win;
     }
     void addToShow(screnable* inst) {
@@ -68,7 +68,7 @@ public:
     void removeToShow(screnable* inst) {
         toShowList.erase(inst);
     }
-    void show() {
+    void show() const {
         win->clear();
         for(screnable* i:toShowList) {
             i->show();
