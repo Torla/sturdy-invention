@@ -35,24 +35,26 @@ public:
 };
 
 
-struct direction{
-int angle;
-direction(int x=0):angle(x){};
-operator int() const{
-    return angle%360;
-}
-void operator=(int x){angle=x;}
+struct direction {
+    int angle;
+    direction(int x=0):angle(x) {};
+    operator int() const {
+        return angle%360;
+    }
+    void operator=(int x) {
+        angle=x;
+    }
 
 };
 
 
 enum directionCardinal {N=0,
-                NE=45,
-                E=90,
-                SE=135,
-                S=180,
-                SW=225,
-                W=270,
-                NW=315,
-               };
+                        NE=45,
+                        E=90,
+                        SE=135,
+                        S=180,
+                        SW=225,
+                        W=270,
+                        NW=315,
+                       };
 #endif // POSITION_H_INCLUDED

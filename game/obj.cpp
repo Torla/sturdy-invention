@@ -8,7 +8,7 @@ using namespace objPar;
 int obj::id_counter=0;
 indexof<obj> obj::ind;
 
-obj::obj(int x,int y,direction dir,tile t,int layer):screnable(layer),pos(x,y),dir(dir) {
+obj::obj(int x,int y,int mass,float friction,direction dir,tile t,int layer):screnable(layer),fisics(mass,friction),pos(x,y),dir(dir) {
     id=id_counter++;
     this->t=t;
     if(ind.add(*this)) {
@@ -22,10 +22,58 @@ obj::~obj() {
     ind.remove(*this);
 }
 
-void obj::move(int x,int y){
-map(pos)->remove(*this);
-pos.move(x,y);
-map(pos)->add(*this);
+void obj::move(int x,int y) {
+    if(x>=mapPar::MapWidth || x<0) return;
+    if(y>=mapPar::MapHeight || y<0) return;
+    map(pos)->remove(*this);
+    pos.move(x,y);
+    map(pos)->add(*this);
+}
+
+void obj::move(direction dir) {
+    int x=0,y=0;
+    switch (dir) {
+    case N:
+        x=-1;
+        y=0;
+        break;
+
+    case NE:
+        x=-1;
+        y=1;
+        break;
+
+    case E:
+        x=0;
+        y=1;
+        break;
+
+    case SE:
+        x=1;
+        y=1;
+        break;
+
+    case S:
+        x=1;
+        y=0;
+        break;
+
+    case SW:
+        x=1;
+        y=-1;
+        break;
+
+    case W:
+        x=0;
+        y=-1;
+        break;
+
+    case NW:
+        x=-1;
+        y=-1;
+        break;
+    }
+    move(pos.get_position_x()+y,pos.get_position_y()+x);
 }
 
 bool obj::show() {

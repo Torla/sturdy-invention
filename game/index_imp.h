@@ -44,8 +44,12 @@ template <class T> bool indexof<T>::clear() {
 
 template <class T> void indexof<T>::forEach(void (*consumer)(T* &)) {
     std::list<std::pair<const int,T*>> l;
-    std::for_each(table.begin(),table.end(),[&consumer,&l](std::pair<const int,T*>& x){l.push_front(x);});
-    std::for_each(l.begin(),l.end(),[&consumer](std::pair<const int,T*>& x){consumer(x.second);});
+    std::for_each(table.begin(),table.end(),[&consumer,&l](std::pair<const int,T*>& x) {
+        l.push_front(x);
+    });
+    std::for_each(l.begin(),l.end(),[&consumer](std::pair<const int,T*>& x) {
+        consumer(x.second);
+    });
     return;
 }
 #endif // indexof_H_INCLUDED
