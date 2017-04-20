@@ -10,6 +10,8 @@ std::array<texture*,TILENUM> tileset = {
     new texture("img/standard_floor.jpg",screen.getWindow()),
     new texture("img/test.bmp",screen.getWindow()),
     new texture("img/test2.bmp",screen.getWindow(),true),
+    new texture("img/player.bmp",screen.getWindow(),true),
+    new texture("img/wall.bmp",screen.getWindow(),false),
 };
 
 screnable::screnable(int layer):layer(layer) {

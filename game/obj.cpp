@@ -8,7 +8,7 @@ using namespace objPar;
 int obj::id_counter=0;
 indexof<obj> obj::ind;
 
-obj::obj(int x,int y,int mass,float friction,direction dir,tile t,int layer):screnable(layer),fisics(mass,friction),pos(x,y),dir(dir) {
+obj::obj(int x,int y,float mass,float friction,direction dir,tile t,int layer):screnable(layer),fisics(mass,friction),pos(x,y),dir(dir) {
     id=id_counter++;
     this->t=t;
     if(ind.add(*this)) {
@@ -81,3 +81,18 @@ bool obj::show() {
     return false;
 }
 
+
+blockingObj::blockingObj(int x,int y,float mass,float friction,direction dir,tile t,int layer):obj(x,y,mass,friction,dir,t,layer) {
+    map(x,y)->setBlocked(true);
+}
+
+blockingObj::~blockingObj() {
+    map(pos)->setBlocked(false);
+}
+void blockingObj::move(int x,int y) {
+    if(map(x,y)->isBlocked()) return;
+    map(pos)->setBlocked(false);
+    obj::move(x,y);
+    map(pos)->setBlocked(true);
+    return;
+}

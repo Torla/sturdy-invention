@@ -26,7 +26,8 @@ enum tile {
     STANDARD_FLOOR,
     TEST,
     TEST2,
-    TEST3,
+    PLAYER,
+    WALL,
     TILENUM,
 };
 

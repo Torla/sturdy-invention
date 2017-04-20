@@ -17,10 +17,10 @@ void fisics::frame() {
 }
 
 void fisics::push(direction dir,int force) {
-int sud=0;
-int est=0;
-const int rad2=1.42;
-switch (dir) {
+    int sud=0;
+    int est=0;
+    const int rad2=1.42;
+    switch (dir) {
     case N:
         sud=-1;
         est=0;
@@ -61,18 +61,18 @@ switch (dir) {
         est=-1;
         break;
     }
-if(sud && est){
-    sud*=rad2;
-    est*=rad2;
-}
-if(sud){
-    if(((velocity.sud+(force*sud)/mass)*velocity.sud)<0) velocity.frameCountSud=0;
-    velocity.sud+=(force*sud)/mass;
-}
+    if(sud && est) {
+        sud*=rad2;
+        est*=rad2;
+    }
+    if(sud) {
+        if(((velocity.sud+(force*sud)/mass)*velocity.sud)<0) velocity.frameCountSud=0;
+        velocity.sud+=(force*sud)/mass;
+    }
 
-if(est){
-    if(((velocity.est+(force*est)/mass)*velocity.est)<0)velocity.frameCountEst=0;
-    velocity.est+=(force*est)/mass;
-}
-return;
+    if(est) {
+        if(((velocity.est+(force*est)/mass)*velocity.est)<0)velocity.frameCountEst=0;
+        velocity.est+=(force*est)/mass;
+    }
+    return;
 }

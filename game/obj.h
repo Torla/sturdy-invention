@@ -16,13 +16,13 @@ const int indexDim=1000;
 class obj:public indexable,public screnable,public fisics {
     static int id_counter;
     int id;
-    position pos;
 protected:
+    position pos;
     tile t;
 public:
     direction dir;
     static indexof<obj> ind;
-    obj(int x,int y,int mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
+    obj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     virtual ~obj();
     position getPosition() {
         return pos;
@@ -33,11 +33,11 @@ public:
     void setDirection(direction dir) {
         this->dir=dir;
     }
-    void move(int x,int y);
-    void move(position pos) {
+    virtual void move(int x,int y);
+    virtual void move(position pos) {
         move(pos.get_position_x(),pos.get_position_y());
     }
-    void move(direction dir);
+    virtual void move(direction dir);
     operator int() const {
         return id;
     }
@@ -52,5 +52,11 @@ public:
     }
 };
 
+class blockingObj:public obj {
+public:
+    blockingObj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
+    ~blockingObj();
+    virtual void move(int x,int y);
+};
 
 #endif // OBJ_H_INCLUDED

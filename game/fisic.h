@@ -13,7 +13,7 @@ class fisics {
         int frameCountEst;
         velocityStruct():sud(0),frameCountSud(0),est(0),frameCountEst(0) {};
     } velocity;
-    int mass;
+    float mass;
     float friction;
 protected:
     void setFriction(float x) {
@@ -24,7 +24,7 @@ protected:
     }
     void frame();
 public:
-    fisics(int mass,float friction):mass(mass),friction(friction) {};
+    fisics(float mass,float friction):mass(mass),friction(friction) {};
     void push(direction dir,int force);
     virtual void move(direction)=0;
 
