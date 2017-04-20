@@ -12,6 +12,11 @@ class fisics {
         int est;
         int frameCountEst;
         velocityStruct():sud(0),frameCountSud(0),est(0),frameCountEst(0) {};
+        operator std::string() const {
+            std::stringstream s;
+            s << "(" << sud << "," << est << ") ";
+            return s.str();
+        }
     } velocity;
     float mass;
     float friction;
@@ -27,6 +32,11 @@ public:
     fisics(float mass,float friction):mass(mass),friction(friction) {};
     void push(direction dir,int force);
     virtual void move(direction)=0;
+    virtual operator std::string() const {
+        std::stringstream s;
+        s << "Mass: " << mass << " friction: " << friction << " vel: " << (std::string)velocity;
+        return s.str();
+    }
 
 };
 

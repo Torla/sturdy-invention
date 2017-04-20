@@ -15,13 +15,13 @@ using namespace std;
 
 int main() {
     obj* o=new blockingObj(2,0,1,0.4,E,PLAYER);
-    obj* o2=new wall(5,0);
+    new wall(5,0);
     new wall(5,1);
     new wall(5,2);
     new wall(5,3);
-    cout << (std::string)*map(5,0);
     o->push(SE,10);
     for(int i=0; i<100; ++i) {
+        cout << (std::string)*o << endl;
         obj::ind.forEach([](obj* &x){x->frame();});
         screen.show();
         SDL_Delay(10);

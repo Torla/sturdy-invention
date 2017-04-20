@@ -47,7 +47,7 @@ public:
     }
     virtual operator std::string() const {
         std::stringstream s;
-        s << " " <<"id: "<<id << " tile:" << t << " pos:" << (std::string)pos << " dir:" << dir << " ";
+        s <<"id: "<<id << " tile:" << t << " pos:" << (std::string)pos << " dir:" << dir << " " << fisics::operator std::string();
         return s.str();
     }
 };
@@ -57,6 +57,11 @@ public:
     blockingObj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     ~blockingObj();
     virtual void move(int x,int y);
+    virtual operator std::string() const {
+        std::stringstream s;
+        s << "blocking " << obj::operator std::string();
+        return s.str();
+    }
 };
 
 #endif // OBJ_H_INCLUDED
