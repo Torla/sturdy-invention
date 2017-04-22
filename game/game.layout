@@ -2,34 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="map.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="804" topLine="9" />
+			<Cursor1 position="268" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="obj.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="map.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="847" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="grafic.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="784" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="grafic.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1134" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="map.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="472" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="position.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="220" topLine="11" />
+			<Cursor1 position="708" topLine="9" />
 		</Cursor>
 	</File>
 	<File name="index_imp.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,39 +17,74 @@
 			<Cursor1 position="539" topLine="23" />
 		</Cursor>
 	</File>
-	<File name="screen.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="grafic.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="784" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="mapLayoutLoader.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="218" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screen.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="511" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="fisic.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="201" topLine="2" />
+			<Cursor1 position="1074" topLine="45" />
 		</Cursor>
 	</File>
-	<File name="obj.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screen.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="577" topLine="70" />
+			<Cursor1 position="460" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="obj.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="847" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="index.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="422" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="map.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="472" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="mapLayoutLoader.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="250" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="grafic.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1134" topLine="28" />
 		</Cursor>
 	</File>
 	<File name="position.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="861" topLine="30" />
+			<Cursor1 position="356" topLine="8" />
 		</Cursor>
 	</File>
-	<File name="screen.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="position.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="460" topLine="15" />
+			<Cursor1 position="220" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="obj.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="621" topLine="10" />
 		</Cursor>
 	</File>
 	<File name="fisic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="569" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="index.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="257" topLine="6" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -3,6 +3,7 @@
 
 #include "screen.h"
 #include "obj.h"
+#include "mapLayoutLoader.h"
 #include <list>
 #include <string>
 #include <sstream>
@@ -57,16 +58,15 @@ public:
 
 
 class mapClass:screnable {
-
+    friend mapLayoutLoader;
     mapCell map[mapPar::MapWidth][mapPar::MapHeight];
-
 public:
     mapClass():screnable(1) {};
     mapCell* operator()(int x,int y);
     mapCell* operator()(position pos) {
         return (*this)(pos.get_position_x(),pos.get_position_y());
     }
-    static bool inBoundaries(int x,int y){
+    static bool inBoundaries(int x,int y) {
         if(x>=mapPar::MapWidth || x<0) return false;
         if(y>=mapPar::MapHeight || y<0) return false;
         return true;

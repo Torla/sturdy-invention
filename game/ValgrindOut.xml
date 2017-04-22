@@ -12,8 +12,8 @@
   <line>Command: /home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game </line>
 </preamble>
 
-<pid>16280</pid>
-<ppid>3636</ppid>
+<pid>6369</pid>
+<ppid>1943</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -33,7 +33,7 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.074 </time>
+  <time>00:00:00:00.100 </time>
 </status>
 
 <error>
@@ -124,7 +124,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x40244A</ip>
+      <ip>0x403E94</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -132,15 +132,15 @@
       <line>10</line>
     </frame>
     <frame>
-      <ip>0x401DCC</ip>
+      <ip>0x40219E</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>46</line>
+      <line>56</line>
     </frame>
     <frame>
-      <ip>0x401BC0</ip>
+      <ip>0x401E74</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__static_initialization_and_destruction_0(int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -148,15 +148,15 @@
       <line>6</line>
     </frame>
     <frame>
-      <ip>0x401D18</ip>
+      <ip>0x402090</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>_GLOBAL__sub_I_screen</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.cpp</file>
-      <line>25</line>
+      <line>30</line>
     </frame>
     <frame>
-      <ip>0x40465C</ip>
+      <ip>0x409E4C</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__libc_csu_init</fn>
     </frame>
@@ -182,15 +182,15 @@
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:10.188 </time>
+  <time>00:00:00:09.555 </time>
 </status>
 
 <error>
-  <unique>0x16f</unique>
+  <unique>0x173</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>40 bytes in 1 blocks are definitely lost in loss record 365 of 1,463</text>
+    <text>40 bytes in 1 blocks are definitely lost in loss record 369 of 1,472</text>
     <leakedbytes>40</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -241,7 +241,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x401D49</ip>
+      <ip>0x4020C1</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::clear()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -252,11 +252,11 @@
 </error>
 
 <error>
-  <unique>0x170</unique>
+  <unique>0x174</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>40 bytes in 1 blocks are definitely lost in loss record 366 of 1,463</text>
+    <text>40 bytes in 1 blocks are definitely lost in loss record 370 of 1,472</text>
     <leakedbytes>40</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -303,7 +303,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x401D49</ip>
+      <ip>0x4020C1</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::clear()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -311,48 +311,22 @@
       <line>38</line>
     </frame>
     <frame>
-      <ip>0x401DE2</ip>
+      <ip>0x4021B4</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>47</line>
+      <line>57</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x189</unique>
+  <unique>0x326</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>48 bytes in 1 blocks are definitely lost in loss record 391 of 1,463</text>
-    <leakedbytes>48</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2E0EF</ip>
-      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-    </frame>
-    <frame>
-      <ip>0x4028C8</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>main</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>main.cpp</file>
-      <line>16</line>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x321</unique>
-  <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>168 bytes in 1 blocks are definitely lost in loss record 799 of 1,463</text>
+    <text>168 bytes in 1 blocks are definitely lost in loss record 804 of 1,472</text>
     <leakedbytes>168</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -399,7 +373,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x401D49</ip>
+      <ip>0x4020C1</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::clear()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -407,22 +381,22 @@
       <line>38</line>
     </frame>
     <frame>
-      <ip>0x401DE2</ip>
+      <ip>0x4021B4</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>47</line>
+      <line>57</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x322</unique>
+  <unique>0x327</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>168 bytes in 1 blocks are definitely lost in loss record 800 of 1,463</text>
+    <text>168 bytes in 1 blocks are definitely lost in loss record 805 of 1,472</text>
     <leakedbytes>168</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -469,7 +443,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x401D49</ip>
+      <ip>0x4020C1</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::clear()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -477,22 +451,22 @@
       <line>38</line>
     </frame>
     <frame>
-      <ip>0x401DE2</ip>
+      <ip>0x4021B4</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>47</line>
+      <line>57</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x341</unique>
+  <unique>0x346</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>200 bytes in 5 blocks are definitely lost in loss record 831 of 1,463</text>
+    <text>200 bytes in 5 blocks are definitely lost in loss record 836 of 1,472</text>
     <leakedbytes>200</leakedbytes>
     <leakedblocks>5</leakedblocks>
   </xwhat>
@@ -539,7 +513,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402511</ip>
+      <ip>0x403F5B</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -547,22 +521,22 @@
       <line>20</line>
     </frame>
     <frame>
-      <ip>0x401DCC</ip>
+      <ip>0x40219E</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>46</line>
+      <line>56</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x342</unique>
+  <unique>0x347</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>200 bytes in 5 blocks are definitely lost in loss record 832 of 1,463</text>
+    <text>200 bytes in 5 blocks are definitely lost in loss record 837 of 1,472</text>
     <leakedbytes>200</leakedbytes>
     <leakedblocks>5</leakedblocks>
   </xwhat>
@@ -609,7 +583,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402511</ip>
+      <ip>0x403F5B</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -617,37 +591,33 @@
       <line>20</line>
     </frame>
     <frame>
-      <ip>0x401DCC</ip>
+      <ip>0x40219E</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>46</line>
+      <line>56</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x3ac</unique>
+  <unique>0x3b1</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>280 (56 direct, 224 indirect) bytes in 1 blocks are definitely lost in loss record 938 of 1,463</text>
+    <text>280 (224 direct, 56 indirect) bytes in 1 blocks are definitely lost in loss record 943 of 1,472</text>
     <leakedbytes>280</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
     <frame>
-      <ip>0x4C2DB8F</ip>
+      <ip>0x4C2FB55</ip>
       <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>malloc</fn>
+      <fn>calloc</fn>
     </frame>
     <frame>
-      <ip>0xE9E307C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDC968C</ip>
+      <ip>0xCDC95F5</ip>
       <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
     </frame>
     <frame>
@@ -684,22 +654,30 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402511</ip>
+      <ip>0x403F5B</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>grafic.cpp</file>
       <line>20</line>
     </frame>
+    <frame>
+      <ip>0x40219E</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>screen_class::screen_class()</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.h</file>
+      <line>56</line>
+    </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x492</unique>
+  <unique>0x496</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>840 bytes in 5 blocks are definitely lost in loss record 1,168 of 1,463</text>
+    <text>840 bytes in 5 blocks are definitely lost in loss record 1,172 of 1,472</text>
     <leakedbytes>840</leakedbytes>
     <leakedblocks>5</leakedblocks>
   </xwhat>
@@ -746,7 +724,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402511</ip>
+      <ip>0x403F5B</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -754,22 +732,22 @@
       <line>20</line>
     </frame>
     <frame>
-      <ip>0x401DCC</ip>
+      <ip>0x40219E</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>46</line>
+      <line>56</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x493</unique>
+  <unique>0x497</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>840 bytes in 5 blocks are definitely lost in loss record 1,169 of 1,463</text>
+    <text>840 bytes in 5 blocks are definitely lost in loss record 1,173 of 1,472</text>
     <leakedbytes>840</leakedbytes>
     <leakedblocks>5</leakedblocks>
   </xwhat>
@@ -816,7 +794,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402511</ip>
+      <ip>0x403F5B</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>window::window(char const*, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -824,22 +802,22 @@
       <line>20</line>
     </frame>
     <frame>
-      <ip>0x401DCC</ip>
+      <ip>0x40219E</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>screen_class::screen_class()</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.h</file>
-      <line>46</line>
+      <line>56</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x55b</unique>
+  <unique>0x562</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,369 of 1,463</text>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,376 of 1,472</text>
     <leakedbytes>4096</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -897,11 +875,11 @@
 </error>
 
 <error>
-  <unique>0x55c</unique>
+  <unique>0x563</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,370 of 1,463</text>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,377 of 1,472</text>
     <leakedbytes>4096</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -943,7 +921,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402786</ip>
+      <ip>0x4041D0</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -951,7 +929,7 @@
       <line>61</line>
     </frame>
     <frame>
-      <ip>0x401C15</ip>
+      <ip>0x401EC9</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__static_initialization_and_destruction_0(int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -959,22 +937,22 @@
       <line>10</line>
     </frame>
     <frame>
-      <ip>0x401D18</ip>
+      <ip>0x402090</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>_GLOBAL__sub_I_screen</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.cpp</file>
-      <line>25</line>
+      <line>30</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x55d</unique>
+  <unique>0x564</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,371 of 1,463</text>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,378 of 1,472</text>
     <leakedbytes>4096</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -1016,7 +994,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402786</ip>
+      <ip>0x4041D0</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -1024,7 +1002,7 @@
       <line>61</line>
     </frame>
     <frame>
-      <ip>0x401C61</ip>
+      <ip>0x401F15</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__static_initialization_and_destruction_0(int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -1032,22 +1010,22 @@
       <line>11</line>
     </frame>
     <frame>
-      <ip>0x401D18</ip>
+      <ip>0x402090</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>_GLOBAL__sub_I_screen</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.cpp</file>
-      <line>25</line>
+      <line>30</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x55e</unique>
+  <unique>0x565</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,372 of 1,463</text>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,379 of 1,472</text>
     <leakedbytes>4096</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -1089,7 +1067,7 @@
       <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
     </frame>
     <frame>
-      <ip>0x402786</ip>
+      <ip>0x4041D0</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -1097,7 +1075,7 @@
       <line>61</line>
     </frame>
     <frame>
-      <ip>0x401CAD</ip>
+      <ip>0x401F61</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>__static_initialization_and_destruction_0(int, int)</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
@@ -1105,22 +1083,230 @@
       <line>12</line>
     </frame>
     <frame>
-      <ip>0x401D18</ip>
+      <ip>0x402090</ip>
       <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
       <fn>_GLOBAL__sub_I_screen</fn>
       <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
       <file>screen.cpp</file>
-      <line>25</line>
+      <line>30</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x59e</unique>
+  <unique>0x566</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,436 of 1,463</text>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,380 of 1,472</text>
+    <leakedbytes>4096</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0xEA79E9F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA7A202</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E77EA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7A31</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7E57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E95C53</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8F385</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E91F6C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4041D0</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>61</line>
+    </frame>
+    <frame>
+      <ip>0x401FAD</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__static_initialization_and_destruction_0(int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>13</line>
+    </frame>
+    <frame>
+      <ip>0x402090</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>_GLOBAL__sub_I_screen</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>30</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x567</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>4,096 bytes in 1 blocks are definitely lost in loss record 1,381 of 1,472</text>
+    <leakedbytes>4096</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0xEA79E9F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA7A202</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E77EA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7A31</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE7E7E57</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x4E95C53</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E8F385</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4E91F6C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4041D0</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>texture::texture(char const*, window*, bool, int, int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>grafic.cpp</file>
+      <line>61</line>
+    </frame>
+    <frame>
+      <ip>0x401FF9</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>__static_initialization_and_destruction_0(int, int)</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x402090</ip>
+      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
+      <fn>_GLOBAL__sub_I_screen</fn>
+      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
+      <file>screen.cpp</file>
+      <line>30</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x5a7</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,445 of 1,472</text>
+    <leakedbytes>32768</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0xEF45D20</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0xEA68CB4</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA68CD8</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xEA3370D</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE9E2B70</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xE9E2CCD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xCDC9A36</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0xCD9BDBA</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0xCD9C0B8</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
+      <fn>glXCreateContext</fn>
+    </frame>
+    <frame>
+      <ip>0x4EF859F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4EEB0EF</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+    <frame>
+      <ip>0x4EEBF48</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.4.0</obj>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x5a8</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,446 of 1,472</text>
     <leakedbytes>32768</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -1178,89 +1364,11 @@
 </error>
 
 <error>
-  <unique>0x59f</unique>
+  <unique>0x5a9</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,437 of 1,463</text>
-    <leakedbytes>32768</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0xEF45D20</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0</obj>
-    </frame>
-    <frame>
-      <ip>0xEA68CB4</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA69092</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xEA7763C</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/dri/i965_dri.so</obj>
-    </frame>
-    <frame>
-      <ip>0xCDCA7BB</ip>
-      <obj>/usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0</obj>
-    </frame>
-    <frame>
-      <ip>0x401D69</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>window::show()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>grafic.h</file>
-      <line>41</line>
-    </frame>
-    <frame>
-      <ip>0x401DF1</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>screen_class::screen_class()</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.h</file>
-      <line>48</line>
-    </frame>
-    <frame>
-      <ip>0x401BC0</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>__static_initialization_and_destruction_0(int, int)</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>6</line>
-    </frame>
-    <frame>
-      <ip>0x401D18</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>_GLOBAL__sub_I_screen</fn>
-      <dir>/home/torla/Scrivania/game/sturdy-invention/game</dir>
-      <file>screen.cpp</file>
-      <line>25</line>
-    </frame>
-    <frame>
-      <ip>0x40465C</ip>
-      <obj>/home/torla/Scrivania/game/sturdy-invention/game/bin/Debug/game</obj>
-      <fn>__libc_csu_init</fn>
-    </frame>
-    <frame>
-      <ip>0x5C317BE</ip>
-      <obj>/lib/x86_64-linux-gnu/libc-2.23.so</obj>
-      <fn>(below main)</fn>
-      <dir>/build/glibc-9tT8Do/glibc-2.23/csu/../csu</dir>
-      <file>libc-start.c</file>
-      <line>247</line>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x5a0</unique>
-  <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,438 of 1,463</text>
+    <text>32,768 bytes in 1 blocks are definitely lost in loss record 1,447 of 1,472</text>
     <leakedbytes>32768</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
@@ -1317,11 +1425,11 @@
 </error>
 
 <error>
-  <unique>0x5b1</unique>
+  <unique>0x5ba</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>65,536 bytes in 1 blocks are definitely lost in loss record 1,455 of 1,463</text>
+    <text>65,536 bytes in 1 blocks are definitely lost in loss record 1,464 of 1,472</text>
     <leakedbytes>65536</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>

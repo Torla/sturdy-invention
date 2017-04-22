@@ -66,13 +66,13 @@ void fisics::push(direction dir,int force) {
         est*=rad2;
     }
     if(sud) {
-    velocity.sud+=(force*sud)/mass;
-    if(velocity.sud!=0 && 100/velocity.sud < velocity.frameCountSud) velocity.frameCountSud=100/velocity.sud;
+        velocity.sud+=(force*sud)/mass;
+        if(velocity.sud!=0 && 100/velocity.sud < velocity.frameCountSud) velocity.frameCountSud=100/velocity.sud;
+    }
+    if(est) {
+        velocity.est+=(force*est)/mass;
+        if(velocity.est!=0 && 100/velocity.est < velocity.frameCountEst) velocity.frameCountEst=100/velocity.est;
     }
 
-    if(est) {
-        if(((velocity.est+(force*est)/mass)*velocity.est)<0)velocity.frameCountEst=0;
-        velocity.est+=(force*est)/mass;
-    }
     return;
 }
