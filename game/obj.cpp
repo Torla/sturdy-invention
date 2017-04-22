@@ -23,8 +23,7 @@ obj::~obj() {
 }
 
 void obj::move(int x,int y) {
-    if(x>=mapPar::MapWidth || x<0) return;
-    if(y>=mapPar::MapHeight || y<0) return;
+    if(!mapClass::inBoundaries(x,y)) return;
     map(pos)->remove(*this);
     pos.move(x,y);
     map(pos)->add(*this);
@@ -90,6 +89,7 @@ blockingObj::~blockingObj() {
     map(pos)->setBlocked(false);
 }
 void blockingObj::move(int x,int y) {
+    if(!mapClass::inBoundaries(x,y)) return;
     if(map(x,y)->isBlocked()) return;
     map(pos)->setBlocked(false);
     obj::move(x,y);
