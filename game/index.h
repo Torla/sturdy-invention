@@ -5,26 +5,27 @@
 #include <array>
 #include <unordered_map>
 
+
 class indexable {
 public:
     virtual operator int() const=0;
 };
 
 
-template <class T> class indexof {
-    std::unordered_map<int,T*> table;
+template <class H,class T> class indexof {
+    std::unordered_map<H,T*,typename H::hash> table;
     int numElements;
 
 public:
     indexof();
     bool add(T & x);
     bool remove(T & x);
-    T* find(int id) const;
+    T* find(H id) const;
     ~indexof();
     bool clear();
     bool freeAll();
     void forEach(void (*consumer)(T* &));
-    T* operator[](int id) const {
+    T* operator[](H id) const {
         return find(id);
     }
 };

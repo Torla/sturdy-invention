@@ -2,11 +2,13 @@
 #include "index.h"
 #include "index_imp.h"
 #include "map.h"
+#include "hashtable.h"
 
 using namespace objPar;
 
 int obj::id_counter=0;
-indexof<obj> obj::ind;
+indexof<objHandler,obj> obj::ind;
+std::hash<int> objHandler::h;
 
 obj::obj(int x,int y,float mass,float friction,direction dir,tile t,int layer):screnable(layer),fisics(mass,friction),pos(x,y),dir(dir) {
     id=id_counter++;
@@ -82,7 +84,12 @@ bool obj::show() const {
 
 
 blockingObj::blockingObj(int x,int y,float mass,float friction,direction dir,tile t,int layer):obj(x,y,mass,friction,dir,t,layer) {
-    map(x,y)->setBlocked(true);
+    if(map(pos)->isBlocked()){
+        std::cout << "Err: constructing blocking obj on blocked space" << std::endl;
+        delete this;
+        return;
+    }
+    map(pos)->setBlocked(true);
     map(pos)->setBlocker(*this);
 }
 

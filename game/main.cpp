@@ -12,15 +12,13 @@
 
 using namespace std;
 
-
-
 int main() {
     obj* o=new blockingObj(20,10,1,0.5,E,PLAYER);
     mapLayoutLoader::load("map/1.txt");
-    cout << (string)*map(0,0) << endl;
+    cout << *map(20,19) << endl;
     for(int i=0; i<300; i++) {
-        cout << (string)*o << endl;
-        if(i<=200) o->push(E,1);
+        if(i<=100) o->push(W,1);
+        else o->push(E,1);
         obj::ind.forEach([](obj* & x) {
             x->frame();
         });

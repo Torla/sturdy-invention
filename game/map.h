@@ -16,8 +16,8 @@ const int MapWidth=41;
 class mapCell {
     tile floor_tile;
     bool blocked;
-    int blocker;
-    std::set<int> objectHere;
+    objHandler blocker;
+    std::set<objHandler> objectHere;
 public:
     mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false) {};
     bool isBlocked() const {
@@ -26,28 +26,28 @@ public:
     void setBlocked(bool x) {
         blocked=x;
     }
-    void setBlocker(int x) {
+    void setBlocker(objHandler x) {
         blocker=x;
     }
-    int getBlocker() const {
+    objHandler getBlocker() const {
         return blocker;
     }
     bool isEmpty() const {
         return objectHere.empty();
     }
-    void add(int id){
+    void add(objHandler id){
         objectHere.insert(id);
     }
-    void remove(int id) {
+    void remove(objHandler id) {
         objectHere.erase(id);
     }
     void clear() {
         objectHere.clear();
     }
-    std::set<int>::iterator begin() const {
+    std::set<objHandler>::iterator begin() const {
         return objectHere.begin();
     }
-    std::set<int>::iterator end() const {
+    std::set<objHandler>::iterator end() const {
         return objectHere.end();
     }
     void show(int x,int y) const {
@@ -55,11 +55,15 @@ public:
     }
     operator std::string() const {
         std::stringstream s;
-        s << "tile: " << floor_tile << " Blocked:" << blocked << " Blocker:" << blocker <<  " Object here: " << std::endl;
+        s << "tile: " << floor_tile << " Blocked:" << (int)blocked << " Blocker:" << (int)blocker <<  " Object here: " << std::endl;
         for(auto id:*this) {
             s  << "    " << id << " " << (std::string)(*(obj::ind[id])) << std::endl;
         }
         return s.str();
+    }
+    friend std::ostream& operator<< (std::ostream& out , mapCell & o){
+        out << (std::string)o;
+        return out;
     }
 };
 
