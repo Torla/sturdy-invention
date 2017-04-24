@@ -2,17 +2,19 @@
 
 
 void fisics::frame() {
-    if(velocity.frameCountSud--<=0 && velocity.sud!=0) {
+    if(velocity.sud!=0  && velocity.frameCountSud--<=0) {
         if(velocity.sud>0) move(S);
         else if(velocity.sud<0) move(N);
         velocity.sud-=(velocity.sud*friction);
         if(velocity.sud!=0) velocity.frameCountSud=100/velocity.sud;
+        else velocity.frameCountSud=100;
     }
-    if(velocity.frameCountEst--<=0 && velocity.est!=0) {
+    if(velocity.est!=0 && velocity.frameCountEst--<=0) {
         if(velocity.est>0) move(E);
         else if(velocity.est<0) move(W);
         velocity.est-=(velocity.est*friction);
         if(velocity.est!=0) velocity.frameCountEst=100/velocity.est;
+        else velocity.frameCountEst=100;
     }
 }
 

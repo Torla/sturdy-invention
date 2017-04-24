@@ -45,7 +45,6 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="map.cpp" />
 		<Unit filename="map.h" />
-		<Unit filename="mapLayautLoader" />
 		<Unit filename="mapLayoutLoader.cpp" />
 		<Unit filename="mapLayoutLoader.h" />
 		<Unit filename="obj.cpp" />
