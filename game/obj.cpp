@@ -75,7 +75,7 @@ void obj::move(direction dir) {
     move(pos.get_position_x()+y,pos.get_position_y()+x);
 }
 
-bool obj::show() {
+bool obj::show() const {
     screen.putOnMap(t,pos.get_position_x(),pos.get_position_y(),dir);
     return false;
 }

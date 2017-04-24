@@ -17,17 +17,17 @@ public:
     position(int x,int y);
     position();
     void move(int x,int y);
-    int get_position_x() {
+    int get_position_x() const {
         return x;
     }
-    int get_position_y() {
+    int get_position_y() const {
         return y;
     }
     float distance(const position & p);
     float distance(int x,int y);
     int distance_man(const position & p);//da fixare
     int distance_man(int x,int y);
-    virtual operator std::string() const {
+    operator std::string() const {
         std::stringstream s;
         s << '(' << x << ',' << y << ')';
         return s.str();

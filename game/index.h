@@ -19,12 +19,12 @@ public:
     indexof();
     bool add(T & x);
     bool remove(T & x);
-    T* find(int id);
+    T* find(int id) const;
     ~indexof();
     bool clear();
     bool freeAll();
     void forEach(void (*consumer)(T* &));
-    T* operator[](int id) {
+    T* operator[](int id) const {
         return find(id);
     }
 };

@@ -11,7 +11,7 @@ class fisics {
         int frameCountSud;
         int est;
         int frameCountEst;
-        velocityStruct():sud(0),frameCountSud(0),est(0),frameCountEst(0) {};
+        velocityStruct():sud(0),frameCountSud(100),est(0),frameCountEst(100) {};
         operator std::string() const {
             std::stringstream s;
             s << "(" << sud << "," << est << ") ";
@@ -27,7 +27,7 @@ protected:
     void setMass(int x) {
         mass=x;
     }
-    void frame();
+    void fisicsFrame();
 public:
     fisics(float mass,float friction):mass(mass),friction(friction) {};
     void push(direction dir,int force);

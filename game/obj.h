@@ -24,10 +24,10 @@ public:
     static indexof<obj> ind;
     obj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     virtual ~obj();
-    position getPosition() {
+    position getPosition() const {
         return pos;
     }
-    direction getDirection() {
+    direction getDirection() const {
         return dir;
     }
     void setDirection(direction dir) {
@@ -38,14 +38,14 @@ public:
         move(pos.get_position_x(),pos.get_position_y());
     }
     virtual void move(direction dir);
-    operator int() const {
+    operator int() const override {
         return id;
     }
-    virtual bool show();
+    virtual bool show() const override;
     virtual void frame() {
-        fisics::frame();
+        fisics::fisicsFrame();
     }
-    virtual operator std::string() const {
+    virtual operator std::string() const override{
         std::stringstream s;
         s <<"id: "<<id << " tile:" << t << " pos:" << (std::string)pos << " dir:" << dir << " " << fisics::operator std::string();
         return s.str();
@@ -56,9 +56,9 @@ class blockingObj:public obj {
 public:
     blockingObj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     ~blockingObj();
-    virtual void move(int x,int y);
+    virtual void move(int x,int y) override;
     virtual void hit(int) {};
-    virtual operator std::string() const {
+    virtual operator std::string() const override{
         std::stringstream s;
         s << "blocking " << obj::operator std::string();
         return s.str();

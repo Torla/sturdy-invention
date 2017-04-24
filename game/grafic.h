@@ -14,16 +14,16 @@ class window {
 public:
     window(const char* nome,int w,int h);
     ~window();
-    std::string getName() {
+    std::string getName() const {
         std::string str(SDL_GetWindowTitle(win));
         return str;
     }
-    int getWidth() {
+    int getWidth() const {
         int w;
         SDL_GetWindowSize(win,&w,NULL);
         return w;
     }
-    int getHight() {
+    int getHight() const {
         int h;
         SDL_GetWindowSize(win,NULL,&h);
         return h;

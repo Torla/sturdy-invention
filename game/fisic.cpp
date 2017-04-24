@@ -1,7 +1,7 @@
 #include "fisic.h"
 
 
-void fisics::frame() {
+void fisics::fisicsFrame() {
     if(velocity.sud!=0  && velocity.frameCountSud--<=0) {
         if(velocity.sud>0) move(S);
         else if(velocity.sud<0) move(N);

@@ -39,7 +39,7 @@ class screnable {
 public:
     screnable(int layer);
     virtual ~screnable();
-    virtual bool show()=0;
+    virtual bool show() const=0;
     struct compare {
         bool operator()(screnable* const& a,screnable* const& b) const {
             if(a->layer!=b->layer)return a->layer<b->layer;

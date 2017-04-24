@@ -20,7 +20,7 @@ class mapCell {
     std::set<int> objectHere;
 public:
     mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false) {};
-    bool isBlocked() {
+    bool isBlocked() const {
         return blocked;
     }
     void setBlocked(bool x) {
@@ -29,13 +29,13 @@ public:
     void setBlocker(int x) {
         blocker=x;
     }
-    int getBlocker() {
+    int getBlocker() const {
         return blocker;
     }
-    bool isEmpty() {
+    bool isEmpty() const {
         return objectHere.empty();
     }
-    void add(int id) {
+    void add(int id){
         objectHere.insert(id);
     }
     void remove(int id) {
@@ -44,16 +44,16 @@ public:
     void clear() {
         objectHere.clear();
     }
-    std::set<int>::iterator begin() {
+    std::set<int>::iterator begin() const {
         return objectHere.begin();
     }
-    std::set<int>::iterator end() {
+    std::set<int>::iterator end() const {
         return objectHere.end();
     }
-    void show(int x,int y) {
+    void show(int x,int y) const {
         screen.putOnMap(floor_tile,x,y,0);
     }
-    operator std::string() {
+    operator std::string() const {
         std::stringstream s;
         s << "tile: " << floor_tile << " Blocked:" << blocked << " Blocker:" << blocker <<  " Object here: " << std::endl;
         for(auto id:*this) {
@@ -69,17 +69,18 @@ class mapClass:screnable {
     mapCell map[mapPar::MapWidth][mapPar::MapHeight];
 public:
     mapClass():screnable(1) {};
-    mapCell* operator()(int x,int y);
+    mapCell* operator()(const int x,const int y);
     mapCell* operator()(position pos) {
         return (*this)(pos.get_position_x(),pos.get_position_y());
     }
-    static bool inBoundaries(int x,int y) {
+    static bool inBoundaries(const int x,const int y){
         if(x>=mapPar::MapWidth || x<0) return false;
         if(y>=mapPar::MapHeight || y<0) return false;
         return true;
     }
-    bool show();
+    bool show() const override;
 };
 
 extern mapClass map;
 #endif // MAP_H_INCLUDED
+

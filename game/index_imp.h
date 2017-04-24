@@ -25,7 +25,7 @@ template <class T> bool indexof<T>::remove(T & x) {
     return false;
 }
 
-template <class T> T* indexof<T>::find(int id) {
+template <class T> T* indexof<T>::find(int id) const {
     return table.at(id);
 }
 
