@@ -40,7 +40,7 @@ public:
     screnable(int layer);
     virtual ~screnable();
     virtual bool show()=0;
-    struct compareClass {
+    struct compare {
         bool operator()(screnable* const& a,screnable* const& b) const {
             if(a->layer!=b->layer)return a->layer<b->layer;
             else return a<b;
@@ -50,7 +50,7 @@ public:
 
 class screen_class {
     window* win;
-    std::set<screnable*,screnable::compareClass> toShowList;
+    std::set<screnable*,screnable::compare> toShowList;
 public:
     screen_class() {
         win=new window("Test",screenPar::WinWidth,screenPar::WinHeight);

@@ -57,6 +57,7 @@ public:
     blockingObj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     ~blockingObj();
     virtual void move(int x,int y);
+    virtual void hit(int) {};
     virtual operator std::string() const {
         std::stringstream s;
         s << "blocking " << obj::operator std::string();

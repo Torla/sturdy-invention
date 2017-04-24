@@ -83,6 +83,7 @@ bool obj::show() {
 
 blockingObj::blockingObj(int x,int y,float mass,float friction,direction dir,tile t,int layer):obj(x,y,mass,friction,dir,t,layer) {
     map(x,y)->setBlocked(true);
+    map(pos)->setBlocker(*this);
 }
 
 blockingObj::~blockingObj() {
@@ -94,5 +95,6 @@ void blockingObj::move(int x,int y) {
     map(pos)->setBlocked(false);
     obj::move(x,y);
     map(pos)->setBlocked(true);
+    map(pos)->setBlocker(*this);
     return;
 }

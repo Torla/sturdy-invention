@@ -16,6 +16,7 @@ const int MapWidth=41;
 class mapCell {
     tile floor_tile;
     bool blocked;
+    int blocker;
     std::set<int> objectHere;
 public:
     mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false) {};
@@ -24,6 +25,12 @@ public:
     }
     void setBlocked(bool x) {
         blocked=x;
+    }
+    void setBlocker(int x) {
+        blocker=x;
+    }
+    int getBlocker() {
+        return blocker;
     }
     bool isEmpty() {
         return objectHere.empty();
@@ -48,7 +55,7 @@ public:
     }
     operator std::string() {
         std::stringstream s;
-        s << "tile: " << floor_tile << " Blocked:" << blocked << " Object here: " << std::endl;
+        s << "tile: " << floor_tile << " Blocked:" << blocked << " Blocker:" << blocker <<  " Object here: " << std::endl;
         for(auto id:*this) {
             s  << "    " << id << " " << (std::string)(*(obj::ind[id])) << std::endl;
         }
