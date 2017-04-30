@@ -19,10 +19,10 @@ void fisics::fisicsFrame() {
     }
 }
 
-void fisics::push(direction dir,int force) {
-    int sud=0;
-    int est=0;
-    const int rad2=1.42;
+void fisics::push(direction dir,float force) {
+    float sud=0;
+    float est=0;
+    const float rad2=1.42;
     switch (dir) {
     case N:
         sud=-1;
@@ -65,8 +65,8 @@ void fisics::push(direction dir,int force) {
         break;
     }
     if(sud && est) {
-        sud*=rad2;
-        est*=rad2;
+        sud/=rad2;
+        est/=rad2;
     }
     if(sud) {
         velocity.sud+=(force*sud)/mass;

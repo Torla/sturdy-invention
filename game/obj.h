@@ -16,18 +16,24 @@ namespace objPar {
 
 class obj;
 
-class objHandler{
-static std::hash<int> h;
-int id;
+class objHandler {
+    static std::hash<int> h;
+    int id;
 public:
-    objHandler(int x=0):id(x){}
-    void operator=(int &x){id=x;}
-    friend bool operator==(const objHandler & a,const objHandler & b){return a.id==b.id;}
-    obj* operator->();
-    obj& operator*();
-    operator int() const {return id;}
-    struct hash{
-    size_t operator()(const objHandler & x) const {
+    objHandler(int x=0):id(x) {}
+    void operator=(int &x) {
+        id=x;
+    }
+    friend bool operator==(const objHandler & a,const objHandler & b) {
+        return a.id==b.id;
+    }
+    obj* operator->() const ;
+    obj& operator*() const ;
+    operator int() const {
+        return id;
+    }
+    struct hash {
+        size_t operator()(const objHandler & x) const {
             return h(x);
         }
     };
@@ -44,6 +50,9 @@ public:
     static indexof<objHandler,obj> ind;
     obj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     virtual ~obj();
+    objHandler getHandler() {
+        return objHandler(this->id);
+    }
     position getPosition() const {
         return pos;
     }
@@ -58,19 +67,19 @@ public:
         move(pos.get_position_x(),pos.get_position_y());
     }
     virtual void move(direction dir);
-    operator objHandler() const{
+    operator objHandler() const {
         return id;
     };
     virtual bool show() const override;
     virtual void frame() {
         fisics::fisicsFrame();
     }
-    virtual operator std::string() const{
+    virtual operator std::string() const {
         std::stringstream s;
         s <<"id: "<<id << " tile:" << t << " pos:" << (std::string)pos << " dir:" << dir << " " << fisics::operator std::string();
         return s.str();
     }
-    friend std::ostream& operator<< (std::ostream& out , obj & o){
+    friend std::ostream& operator<< (std::ostream& out, obj & o) {
         out << (std::string)o;
         return out;
     }
@@ -82,14 +91,18 @@ public:
     ~blockingObj();
     virtual void move(int x,int y) override;
     virtual void hit(int) {};
-    virtual operator std::string() const override{
+    virtual operator std::string() const override {
         std::stringstream s;
         s << "blocking " << obj::operator std::string();
         return s.str();
     }
 };
 
-inline obj* objHandler::operator->(){return obj::ind.find(id);}
-inline obj& objHandler::operator*(){return *(obj::ind.find(id));}
+inline obj* objHandler::operator->() const {
+    return obj::ind.find(id);
+}
+inline obj& objHandler::operator*()const {
+    return *(obj::ind.find(id));
+}
 
 #endif // OBJ_H_INCLUDED

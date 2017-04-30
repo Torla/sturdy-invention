@@ -20,7 +20,7 @@ class fisics {
     } velocity;
     float mass;
     float friction;
-    protected:
+protected:
     void setFriction(float x) {
         friction=x;
     }
@@ -30,7 +30,7 @@ class fisics {
     void fisicsFrame();
 public:
     fisics(float mass,float friction):mass(mass),friction(friction) {};
-    void push(direction dir,int force);
+    void push(direction dir,float force);
     virtual void move(direction)=0;
     operator std::string() const {
         std::stringstream s;

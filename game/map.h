@@ -35,7 +35,7 @@ public:
     bool isEmpty() const {
         return objectHere.empty();
     }
-    void add(objHandler id){
+    void add(objHandler id) {
         objectHere.insert(id);
     }
     void remove(objHandler id) {
@@ -61,7 +61,7 @@ public:
         }
         return s.str();
     }
-    friend std::ostream& operator<< (std::ostream& out , mapCell & o){
+    friend std::ostream& operator<< (std::ostream& out, mapCell & o) {
         out << (std::string)o;
         return out;
     }
@@ -77,7 +77,7 @@ public:
     mapCell* operator()(position pos) {
         return (*this)(pos.get_position_x(),pos.get_position_y());
     }
-    static bool inBoundaries(const int x,const int y){
+    static bool inBoundaries(const int x,const int y) {
         if(x>=mapPar::MapWidth || x<0) return false;
         if(y>=mapPar::MapHeight || y<0) return false;
         return true;

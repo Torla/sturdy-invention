@@ -5,6 +5,7 @@
 #include <fstream>
 #include "map.h"
 #include "wall.h"
+#include "player.h"
 
 using namespace mapPar;
 
@@ -15,6 +16,11 @@ void mapLayoutLoader::placeObject(char sym,int x,int y) {
     case 'W':
         new wall(x,y);
         break;
+    case '@':
+        new playerClass(x,y);
+        break;
+    default:
+        std::cout << "Err: maploader unknow character" << std::endl;
     }
 }
 

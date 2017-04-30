@@ -84,7 +84,7 @@ bool obj::show() const {
 
 
 blockingObj::blockingObj(int x,int y,float mass,float friction,direction dir,tile t,int layer):obj(x,y,mass,friction,dir,t,layer) {
-    if(map(pos)->isBlocked()){
+    if(map(pos)->isBlocked()) {
         std::cout << "Err: constructing blocking obj on blocked space" << std::endl;
         delete this;
         return;

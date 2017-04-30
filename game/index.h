@@ -6,10 +6,6 @@
 #include <unordered_map>
 
 
-class indexable {
-public:
-    virtual operator int() const=0;
-};
 
 
 template <class H,class T> class indexof {

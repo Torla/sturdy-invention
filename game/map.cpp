@@ -4,7 +4,7 @@ mapClass map;
 
 using namespace mapPar;
 
-mapCell* mapClass::operator()(const int x,const int y){
+mapCell* mapClass::operator()(const int x,const int y) {
     if(x>=MapWidth || y>=MapHeight || x<0 || y<0) {
         std::cout << "Err: access on mapclass over boundaries " << x << " " << y << std::endl;
         return NULL;

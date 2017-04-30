@@ -55,6 +55,7 @@
 			<Option weight="0" />
 		</Unit>
 		<Unit filename="screen.h" />
+		<Unit filename="wall.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
