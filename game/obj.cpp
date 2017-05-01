@@ -10,8 +10,8 @@ int obj::id_counter=0;
 indexof<objHandler,obj> obj::ind;
 std::hash<int> objHandler::h;
 
-obj::obj(int x,int y,float mass,float friction,direction dir,tile t,int layer):screnable(layer),fisics(mass,friction),pos(x,y),dir(dir) {
-    id=id_counter++;
+obj::obj(int x,int y,float mass,float friction,direction dir,tile t,int layer):screnable(layer),fisics(mass,friction),id(id_counter),pos(x,y),t(t),dir(dir) {
+    id_counter++;
     this->t=t;
     if(ind.add(*this)) {
         std::cout << "Err: inpossible adding obj in index (obj id " << id << ")" << std::endl;

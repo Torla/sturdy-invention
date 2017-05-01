@@ -14,10 +14,10 @@ using namespace std;
 int main() {
     mapLayoutLoader::load("map/1.txt");
     objHandler(0)->push(E,100);
-    for(int i=0; i<300; i++) {
+    for(int i=0; i<0; i++) {
         cout << *player->getHandler() << endl;
-        if(i<=100) player->push(E,1);
-        else player->push(S,2);
+        if(i<100) player->hit(1);
+        else player->heal(2);
         obj::ind.forEach([](obj* & x) {
             x->frame();
         });

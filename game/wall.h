@@ -5,7 +5,7 @@
 namespace wallPar {
 const int wallMass=1000000;
 const int wallFriction=1;
-};
+}
 
 class wall:public blockingObj {
 public:

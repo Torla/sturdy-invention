@@ -21,8 +21,9 @@ class objHandler {
     int id;
 public:
     objHandler(int x=0):id(x) {}
-    void operator=(int &x) {
+    objHandler& operator=(int &x) {
         id=x;
+        return *this;
     }
     friend bool operator==(const objHandler & a,const objHandler & b) {
         return a.id==b.id;
@@ -90,7 +91,7 @@ public:
     blockingObj(int x,int y,float mass,float friction,direction dir=N,tile t=EMPTY,int layer=2);
     ~blockingObj();
     virtual void move(int x,int y) override;
-    virtual void hit(int) {};
+    virtual void hit(int)=0;
     virtual operator std::string() const override {
         std::stringstream s;
         s << "blocking " << obj::operator std::string();

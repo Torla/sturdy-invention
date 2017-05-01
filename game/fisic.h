@@ -29,7 +29,8 @@ protected:
     }
     void fisicsFrame();
 public:
-    fisics(float mass,float friction):mass(mass),friction(friction) {};
+    fisics(float mass,float friction):velocity(),mass(mass),friction(friction){};
+    virtual ~fisics(){};
     void push(direction dir,float force);
     virtual void move(direction)=0;
     operator std::string() const {

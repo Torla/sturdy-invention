@@ -29,6 +29,15 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-march=corei7" />
+			<Add option="-Wnon-virtual-dtor" />
+			<Add option="-Wfloat-equal" />
+			<Add option="-Winline" />
+			<Add option="-Wmissing-include-dirs" />
+			<Add option="-Weffc++" />
+			<Add option="-Wzero-as-null-pointer-constant" />
+			<Add option="-pedantic" />
+			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
@@ -40,6 +49,8 @@
 		<Unit filename="fisic.h" />
 		<Unit filename="grafic.cpp" />
 		<Unit filename="grafic.h" />
+		<Unit filename="health.cpp" />
+		<Unit filename="health.h" />
 		<Unit filename="index.h" />
 		<Unit filename="index_imp.h" />
 		<Unit filename="main.cpp" />
@@ -49,6 +60,8 @@
 		<Unit filename="mapLayoutLoader.h" />
 		<Unit filename="obj.cpp" />
 		<Unit filename="obj.h" />
+		<Unit filename="player.cpp" />
+		<Unit filename="player.h" />
 		<Unit filename="position.cpp" />
 		<Unit filename="position.h" />
 		<Unit filename="screen.cpp">

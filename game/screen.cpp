@@ -6,12 +6,14 @@ using namespace screenPar;
 screen_class screen;
 
 std::array<texture*,TILENUM> tileset = {
-    NULL,
+    nullptr,
     new texture("img/standard_floor.jpg",screen.getWindow()),
     new texture("img/test.bmp",screen.getWindow()),
     new texture("img/test2.bmp",screen.getWindow(),true),
     new texture("img/player.bmp",screen.getWindow(),true),
     new texture("img/wall.bmp",screen.getWindow(),false),
+    new texture("img/lifebar.bmp",screen.getWindow(),false),
+    new texture("img/lifebarframe.bmp",screen.getWindow(),true)
 };
 
 screnable::screnable(int layer):layer(layer) {

@@ -5,7 +5,7 @@
 bool window::isinit=false;
 bool texture::isinit=false;
 
-window::window(const char* nome,int w,int h) {
+window::window(const char* nome,int w,int h):win(nullptr),renderer(nullptr) {
     if(!isinit) {
         if(SDL_Init(SDL_INIT_VIDEO)<0) {
             std::cout << "SDL_Init error" << SDL_GetError() << std::endl;
@@ -37,12 +37,12 @@ void window::put(texture *tex,int x,int y,int w,int h,int angle) {
     sc.y=y;
     sc.w=w;
     sc.h=h;
-    SDL_RenderCopyEx(renderer,tex->getTexture(),NULL,&sc,angle,NULL,SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer,tex->getTexture(),nullptr,&sc,angle,nullptr,SDL_FLIP_NONE);
 }
 
 
 
-texture::texture(const char* path,window *win,bool colorKey,int r,int g,int b) {
+texture::texture(const char* path,window *win,bool colorKey,int r,int g,int b):tex(nullptr){
     SDL_Surface *surf;
     if(!isinit) {
         if(IMG_Init(IMG_INIT_JPG|IMG_INIT_PNG)<0) {

@@ -1,5 +1,6 @@
 #include "fisic.h"
 
+#undef ass
 #define ass(x) ((x>=0)?(x):(-x))
 
 void fisics::fisicsFrame() {
@@ -64,15 +65,15 @@ void fisics::push(direction dir,float force) {
         est=-1;
         break;
     }
-    if(sud && est) {
+    if((int)sud && (int)est) {
         sud/=rad2;
         est/=rad2;
     }
-    if(sud) {
+    if((int)sud) {
         velocity.sud+=(force*sud)/mass;
         if(velocity.sud!=0 && 100/ass(velocity.sud) < velocity.frameCountSud) velocity.frameCountSud=100/ass(velocity.sud);
     }
-    if(est) {
+    if((int)est) {
         velocity.est+=(force*est)/mass;
         if(velocity.est!=0 && 100/ass(velocity.est) < velocity.frameCountEst) velocity.frameCountEst=100/ass(velocity.est);
     }

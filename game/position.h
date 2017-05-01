@@ -15,7 +15,6 @@ class position {
     int y;
 public:
     position(int x,int y);
-    position();
     void move(int x,int y);
     int get_position_x() const {
         return x;
@@ -41,8 +40,9 @@ struct direction {
     operator int() const {
         return angle%360;
     }
-    void operator=(int x) {
+    direction& operator=(int x) {
         angle=x;
+        return *this;
     }
 
 };

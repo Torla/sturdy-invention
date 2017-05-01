@@ -10,9 +10,10 @@
 
 
 
-template <class H,class T> indexof<H,T>::indexof() {
-    numElements=0;
+template <class H,class T> indexof<H,T>::indexof():table(),numElements(0) {
+
 }
+
 template <class H,class T> bool indexof<H,T>::add(T & x) {
     table.insert({(H)x,&x});
     numElements++;

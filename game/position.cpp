@@ -4,17 +4,9 @@
 
 
 
-position::position(int x,int y) {
-    this->x=x;
-    this->y=y;
-    return;
+position::position(int x=0,int y=0):x(x),y(y) {
+}
 
-}
-position::position() {
-    this->x=0;
-    this->y=0;
-    return;
-}
 
 void position::move(int x,int y) {
     this->x=x;

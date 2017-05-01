@@ -14,18 +14,20 @@ class window {
 public:
     window(const char* nome,int w,int h);
     ~window();
+    window(const window&)=delete;
+    window& operator=(const window&)=delete;
     std::string getName() const {
         std::string str(SDL_GetWindowTitle(win));
         return str;
     }
     int getWidth() const {
         int w;
-        SDL_GetWindowSize(win,&w,NULL);
+        SDL_GetWindowSize(win,&w,nullptr);
         return w;
     }
     int getHight() const {
         int h;
-        SDL_GetWindowSize(win,NULL,&h);
+        SDL_GetWindowSize(win,nullptr,&h);
         return h;
     }
     void setSize(int w,int h) {
@@ -49,6 +51,8 @@ class texture {
 public:
     texture(const char *path,window *win,bool colorKey=false,int r=0x0,int g=0x0,int b=0x0);
     ~texture();
+    texture(const texture&)=delete;
+    texture& operator=(const texture&)=delete;
     SDL_Texture* getTexture() {
         return tex;
     }

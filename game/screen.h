@@ -28,6 +28,8 @@ enum tile {
     TEST2,
     PLAYER,
     WALL,
+    LIFEBAR,
+    LIFEBARFRAME,
     TILENUM,
 };
 
@@ -48,12 +50,14 @@ public:
     };
 };
 
+
 class screen_class {
     window* win;
     std::set<screnable*,screnable::compare> toShowList;
+    screen_class(const screen_class&)=delete;
+    screen_class& operator=(const screen_class&)=delete;
 public:
-    screen_class() {
-        win=new window("Test",screenPar::WinWidth,screenPar::WinHeight);
+    screen_class():win(new window("Test",screenPar::WinWidth,screenPar::WinHeight)),toShowList(){
         win->clear();
         win->show();
     }

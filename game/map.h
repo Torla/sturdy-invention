@@ -19,7 +19,7 @@ class mapCell {
     objHandler blocker;
     std::set<objHandler> objectHere;
 public:
-    mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false) {};
+    mapCell(tile t=STANDARD_FLOOR):floor_tile(t),blocked(false),blocker(-1),objectHere(){};
     bool isBlocked() const {
         return blocked;
     }
